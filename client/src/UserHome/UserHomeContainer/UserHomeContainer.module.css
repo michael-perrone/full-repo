@@ -1,0 +1,30 @@
+#userHomeContainer {
+  display: flex;
+}
+
+#clubsSubscribedHalf {
+  width: 65%;
+}
+
+#bookingsHalf {
+  width: 35%;
+}
+
+.half {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 120px 0px 5px 0px;
+}
+
+#noClubsContainer {
+  box-shadow: 0px 1px 4px black;
+  z-index: 0;
+  width: 350px;
+  height: 150px;
+  background-color: rgb(208, 255, 208);
+  font-family: "Josefin Sans", sans-serif;
+  padding: 10px;
+  position: relative;
+  top: 12px;
+}

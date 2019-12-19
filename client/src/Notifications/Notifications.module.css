@@ -1,0 +1,29 @@
+.notificationsContainer {
+  width: 350px;
+  height: 600px;
+  position: fixed;
+  left: 36%;
+  top: 10px;
+  z-index: 999;
+  box-shadow: 1px 1px 9px white;
+  background-color: rgb(209, 247, 250);
+  border: 1px solid black;
+  overflow: auto;
+}
+
+.notificationContainer {
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+}
+
+#backDrop {
+  position: fixed;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.801);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

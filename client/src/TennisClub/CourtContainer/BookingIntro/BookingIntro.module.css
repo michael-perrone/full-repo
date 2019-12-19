@@ -1,0 +1,13 @@
+#bookingIntroSubDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#courtP {
+  font-size: 32px;
+}
+
+#bookingP {
+  width: 725px;
+}

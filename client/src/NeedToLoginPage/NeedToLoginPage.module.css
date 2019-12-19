@@ -1,0 +1,50 @@
+#loginFormLeftSide {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    background-color: white;
+}
+
+#tennisBall {
+    position: absolute;
+    left: -100px;
+    top: 35px;
+    animation-name: ballBouncing;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ballBouncing{
+    0% {
+        transform: translate(50px, 150px) rotate(0)
+    }
+
+   
+    25% {
+        transform: translate(220px, 35px) rotate(540deg)
+    }
+    50% {
+        transform: translate(500px, 170px) rotate(1080deg)
+    }
+    75% {
+        transform: translate(220px, 35px) rotate(540deg)
+    }
+  
+    100% {
+        transform: translate(50px, 150px) rotate(0)
+    }
+    }
+
+
+#registerFormRightSide {
+display: flex;
+align-items: center;
+justify-content: space-around;
+width: 47vw;
+flex-direction: column;
+}

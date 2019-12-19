@@ -1,0 +1,98 @@
+#tennisClubHolder {
+  margin-top: 20px;
+  padding: 18px 0px;
+  height: 260px;
+  width: 85%;
+  align-self: center;
+  background-color: rgb(231, 255, 211);
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 2px 8px black;
+  margin-bottom: 10px;
+}
+
+#tennisClubSubHolder {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#clubImage {
+  height: 200px;
+  width: 240px;
+}
+
+#clubName {
+  position: absolute;
+  font-size: 24px;
+  top: 10px;
+  left: 40%;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans;
+}
+
+#imageHolder {
+  width: 240px;
+  display: flex;
+  height: 240px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15px;
+  background-color: rgb(217, 217, 217);
+  padding: 8px;
+  box-shadow: 1px 1px 6px black;
+}
+
+#increasedWidth {
+  width: 150px;
+}
+
+#clubHolder {
+  display: flex;
+  position: relative;
+  top: 36px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.borderSurroundingDivs {
+  padding: 20px;
+  box-shadow: 0px 0px 3px black;
+  width: 145px;
+  background-color: rgb(233, 233, 233);
+  text-align: center;
+  height: 182px;
+}
+
+#instructorsP {
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-align: center;
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+.services {
+  font-size: 12px;
+}
+
+.viewButton {
+  cursor: pointer;
+  height: 26px;
+  width: 100px;
+  border-radius: 2px;
+  font-size: 12px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  padding-bottom: 2px;
+}
+
+@media (max-width: 700px) and (min-width: 0px) {
+  #tennisClubHolder {
+    flex-direction: column;
+    height: 600px;
+    width: 300px;
+  }
+}
