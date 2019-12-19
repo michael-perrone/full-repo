@@ -12,7 +12,7 @@ const UserNav = props => {
   const [userNotifications, setUserNotifications] = useState([]);
 
   React.useEffect(() => {
-    Axios.get("http://localhost:8080/api/notifications/user", {
+    Axios.get("/api/notifications/user", {
       headers: { "x-auth-token": props.userToken }
     }).then(response => {
       setUserNotifications(response.data.userNotifications);

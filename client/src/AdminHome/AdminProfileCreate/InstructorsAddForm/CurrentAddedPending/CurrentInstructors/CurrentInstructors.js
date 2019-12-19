@@ -38,7 +38,7 @@ const CurrentInstructors = props => {
       instructors.push(instructor.id);
     });
     Axios.post(
-      "http://localhost:8080/api/clubProfile/instructorDeleteFromClub",
+      "/api/clubProfile/instructorDeleteFromClub",
       {
         instructors,
         tennisClub: props.admin.admin.clubId

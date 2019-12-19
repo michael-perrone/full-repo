@@ -57,7 +57,7 @@ class InstructorProfileCreateForm extends React.Component {
       certifications: this.state.certificationsArray
     };
     axios
-      .post("http://localhost:8080/api/instructorProfile", bigObjectSending, {
+      .post("/api/instructorProfile", bigObjectSending, {
         headers: { "x-auth-token": this.props.instructorToken }
       })
       .then(response => {
@@ -150,7 +150,7 @@ class InstructorProfileCreateForm extends React.Component {
     event.preventDefault();
     axios
       .post(
-        "http://localhost:8080/api/instructorProfile",
+        "/api/instructorProfile",
         {},
         {
           headers: {

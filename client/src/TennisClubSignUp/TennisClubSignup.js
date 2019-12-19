@@ -54,7 +54,7 @@ class TennisClubSignup extends React.Component {
     };
 
     axios
-      .post("http://localhost:8080/api/adminSignup", bigStateObject)
+      .post("/api/adminSignup", bigStateObject)
       .then(response => {
         if (response.status === 200) {
           this.props.adminLoginSuccess(response.data.token);

@@ -28,7 +28,7 @@ class TennisClubsList extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/api/getUserLocationInfo", {
+      .get("/api/getUserLocationInfo", {
         headers: { "x-auth-token": this.props.token }
       })
       .then(response => {
@@ -42,7 +42,7 @@ class TennisClubsList extends React.Component {
           this.setState({ stateLocation: response.data.userState });
           this.setState({ stateTown: response.data.userTown });
           axios
-            .get("http://localhost:8080/api/clubsList/clubsFromSavedLocation", {
+            .get("/api/clubsList/clubsFromSavedLocation", {
               headers: { "x-auth-token": this.props.token }
             })
             .then(response => {
@@ -67,7 +67,7 @@ class TennisClubsList extends React.Component {
       };
       this.setState({ searchError: "" });
       axios
-        .post("http://localhost:8080/api/clubsList/clubSearch", objectToSend, {
+        .post("/api/clubsList/clubSearch", objectToSend, {
           headers: { "x-auth-token": this.props.token }
         })
         .then(response => {
@@ -86,7 +86,7 @@ class TennisClubsList extends React.Component {
     this.setState({ locationDenied: true });
     if (this.props.user) {
       axios
-        .post("http://localhost:8080/api/saveLocation", {
+        .post("/api/saveLocation", {
           user: this.props.user,
           locationSaved: false,
           locationDenied: true
@@ -246,7 +246,7 @@ class TennisClubsList extends React.Component {
     if (prevState.stateLocation !== this.state.stateLocation) {
       axios
         .post(
-          "http://localhost:8080/api/clubsList/clubsFromCurrentLocation",
+          "/api/clubsList/clubsFromCurrentLocation",
           {
             state: this.state.stateLocation,
             city: this.state.townLocation

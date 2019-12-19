@@ -49,7 +49,7 @@ class CourtContainer extends React.Component {
       prevProps.clubName !== this.props.clubName
     ) {
       axios
-        .post("http://localhost:8080/api/courtBooked/getcourts", {
+        .post("/api/courtBooked/getcourts", {
           clubName: this.props.clubName,
           date: this.props.date
         })
@@ -67,7 +67,7 @@ class CourtContainer extends React.Component {
   deleteBooking(bookingId) {
     return () => {
       axios
-        .post("http://localhost:8080/api/courtBooked/delete", {
+        .post("/api/courtBooked/delete", {
           bookingId,
           clubName: this.props.clubName,
           date: this.props.date
@@ -174,7 +174,7 @@ class CourtContainer extends React.Component {
         }
       }
       axios
-        .post("http://localhost:8080/api/courtBooked", {
+        .post("/api/courtBooked", {
           booking: this.state.bookingToSend,
           players: playerIds,
           date: this.props.date
@@ -188,13 +188,13 @@ class CourtContainer extends React.Component {
               };
               axios
                 .post(
-                  "http://localhost:8080/api/instructorCourtsBooked",
+                  "/api/instructorCourtsBooked",
                   objectToSend
                 )
                 .then(secondResponse => {
                   if (secondResponse.status === 200 && this.props.user) {
                     axios.post(
-                      "http://localhost:8080/api/notifications/userBookedInstructor",
+                      "/api/notifications/userBookedInstructor",
                       {
                         instructorId: this.props.instructorChosen
                           .instructorChosen._id,
@@ -209,7 +209,7 @@ class CourtContainer extends React.Component {
                     firstResponse.data.newBooking.players.length > 0
                   ) {
                     axios.post(
-                      "http://localhost:8080/api/notifications/instructorBookedUser",
+                      "/api/notifications/instructorBookedUser",
                       {
                         users: firstResponse.data.newBooking.players,
                         instructorId: this.props.instructorChosen
@@ -361,7 +361,7 @@ class CourtContainer extends React.Component {
         courtIds.push(realId);
       });
       axios
-        .post("http://localhost:8080/api/checkInstructorAvailability", {
+        .post("/api/checkInstructorAvailability", {
           instructorId: this.props.instructorChosen.instructorChosen._id,
           courtIds,
           date: this.props.date

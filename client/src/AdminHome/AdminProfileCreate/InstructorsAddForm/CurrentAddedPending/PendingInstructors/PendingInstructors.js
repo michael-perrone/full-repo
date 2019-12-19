@@ -37,7 +37,7 @@ const PendingInstructors = props => {
     pendingToDelete.forEach(pendingInstructor => {
       instructors.push(pendingInstructor.id);
     });
-    Axios.post("http://localhost:8080/api/clubProfile/removeFromPending", {
+    Axios.post("/api/clubProfile/removeFromPending", {
       instructors,
       tennisClub: props.admin.admin.clubId
     }).then(response => {

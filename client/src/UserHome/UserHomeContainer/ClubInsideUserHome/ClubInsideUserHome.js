@@ -20,10 +20,7 @@ const ClubInsideUserHome = props => {
       tennisClubId: props.club._id,
       userId: props.user.user.id
     };
-    Axios.post(
-      "http://localhost:8080/api/userSubscribe/unfollow",
-      objectToSend
-    ).then(response => {
+    Axios.post("/api/userSubscribe/unfollow", objectToSend).then(response => {
       if (response.status === 200) {
         props.setNewClubs(response.data.tennisClubsAfterFilter);
       }

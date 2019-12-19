@@ -24,7 +24,7 @@ class InstructorNotifications extends React.Component {
       });
       if (notificationIds.length > 0) {
         axios
-          .post("http://localhost:8080/api/notifications/updateread", {
+          .post("/api/notifications/updateread", {
             notificationIds: notificationIds
           })
           .then(response => {

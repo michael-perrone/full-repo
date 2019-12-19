@@ -74,7 +74,7 @@ class InstructorRegisterForm extends React.Component {
   registerInstructor(event) {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/api/instructorSignup", this.state.instructor)
+      .post("/api/instructorSignup", this.state.instructor)
       .then(response => {
         if (response.status === 200) {
           this.props.instructorRegisterSuccess(response.data.token);

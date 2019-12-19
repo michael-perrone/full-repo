@@ -30,7 +30,7 @@ class InstructorNav extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/api/instructorProfile/myprofile", {
+      .get("/api/instructorProfile/myprofile", {
         headers: {
           "x-auth-token": this.props.instructorToken
         }
@@ -39,7 +39,7 @@ class InstructorNav extends React.Component {
         this.setState({ instructorProfile: response.data.instructorProfile });
       });
     axios
-      .get("http://localhost:8080/api/notifications/instructornotifications", {
+      .get("/api/notifications/instructornotifications", {
         headers: { "x-auth-token": this.props.instructorToken }
       })
       .then(response => {

@@ -12,7 +12,7 @@ const UserHomeContainer = props => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:8080/api/userClubs", {
+    Axios.get("/api/userClubs", {
       headers: { "x-auth-token": props.userToken }
     }).then(response => {
       if (response.status === 200) {
@@ -24,7 +24,7 @@ const UserHomeContainer = props => {
   }, []);
 
   useEffect(() => {
-    Axios.get("http://localhost:8080/api/getBookings", {
+    Axios.get("/api/getBookings", {
       headers: { "x-auth-token": props.userToken }
     }).then(response => {
       if (response.status === 200) {

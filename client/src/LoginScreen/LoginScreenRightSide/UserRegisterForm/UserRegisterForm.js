@@ -86,7 +86,7 @@ class UserRegisterForm extends React.Component {
       this.setState({ loggingInError: true });
     } else {
       axios
-        .post("http://localhost:8080/api/usersSignup", this.state.user)
+        .post("/api/usersSignup", this.state.user)
         .then(response => {
           /*   const tokenDecoded = decoder(response.data.token);
           localStorage.setItem("token", response.data.token);

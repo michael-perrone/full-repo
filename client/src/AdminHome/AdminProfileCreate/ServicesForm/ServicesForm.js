@@ -128,7 +128,7 @@ class ServicesForm extends React.Component {
       services: newServicesArray,
       otherServices: this.state.otherServicesArray
     };
-    Axios.post("http://localhost:8080/api/clubProfile", objectToSend, {
+    Axios.post("/api/clubProfile", objectToSend, {
       headers: { "x-auth-token": this.props.adminToken }
     }).then(response => {
       if (response.status === 200) {

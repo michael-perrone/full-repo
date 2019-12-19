@@ -57,7 +57,7 @@ const ClubAddedInstructorNotification = props => {
     };
     setClubAccepted(true);
     Axios.post(
-      "http://localhost:8080/api/notifications/instructorclickedyes",
+      "/api/notifications/instructorclickedyes",
       objectToSend
     ).then(response => {
       if ((response.status = 200)) {

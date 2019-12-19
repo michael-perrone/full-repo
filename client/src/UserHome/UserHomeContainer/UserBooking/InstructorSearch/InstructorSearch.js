@@ -29,7 +29,7 @@ const InstructorsAddForm = props => {
     event.preventDefault();
     if (instructorInput.length > 2) {
       axios
-        .post("http://localhost:8080/api/instructorList/instructorSearch", {
+        .post("/api/instructorList/instructorSearch", {
           name: instructorInput
         })
         .then(response => {

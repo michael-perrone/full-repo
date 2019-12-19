@@ -22,7 +22,7 @@ class InstructorHome extends React.Component {
   componentDidMount() {
     if (this.props.instructor) {
       axios
-        .get("http://localhost:8080/api/instructorProfile/myprofile", {
+        .get("/api/instructorProfile/myprofile", {
           headers: { "x-auth-token": this.props.instructorToken }
         })
         .then(response => {
@@ -46,7 +46,7 @@ class InstructorHome extends React.Component {
     if (this.props.user || this.props.admin) {
       this.setState({ isUser: true });
       axios
-        .post("http://localhost:8080/api/getInstructor", {
+        .post("/api/getInstructor", {
           instructorId: this.props.match.params.instructorId
         })
         .then(response => {
@@ -56,7 +56,7 @@ class InstructorHome extends React.Component {
             });
             if (this.props.user || this.props.admin)
               axios
-                .post("http://localhost:8080/api/iBookings", {
+                .post("/api/iBookings", {
                   instructorId: response.data.instructorProfile.instructor._id,
                   userId: this.props.user
                     ? this.props.user.user.id

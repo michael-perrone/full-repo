@@ -27,7 +27,7 @@ const AdminProfileCreate = props => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/clubProfile/myclub", {
+      .get("/api/clubProfile/myclub", {
         headers: { "x-auth-token": props.adminToken }
       })
       .then(response => {
@@ -35,7 +35,7 @@ const AdminProfileCreate = props => {
           setProfile(response.data.clubProfile);
           axios
             .post(
-              "http://localhost:8080/api/clubProfile/getInstructorsPendingAndAccepted",
+              "/api/clubProfile/getInstructorsPendingAndAccepted",
               {
                 pending: response.data.clubProfile.instructorsToSendInvite,
                 accepted: response.data.clubProfile.instructorsWhoAccepted

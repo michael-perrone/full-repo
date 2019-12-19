@@ -28,7 +28,7 @@ const TryingToBookHelper = props => {
         clubName = props.match.params.clubName;
       }
       axios
-        .post("http://localhost:8080/api/getCustomers", {
+        .post("/api/getCustomers", {
           customerName,
           clubNameAllLower: clubName
         })

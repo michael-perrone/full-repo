@@ -10,7 +10,7 @@ const AddedInstructor = props => {
         instructors.push(instructor.id);
       });
       axios
-        .post("http://localhost:8080/api/clubProfile/addInstructorsToClub", {
+        .post("/api/clubProfile/addInstructorsToClub", {
           tennisClub: props.admin.admin.clubId,
           instructors
         })

@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
   sendLoginInfo(event) {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/api/auth/login", this.state.personLoggingIn)
+      .post("/api/auth/login", this.state.personLoggingIn)
       .then(response => {
         if (response.status === 400) {
           // this.props.loginFailed();

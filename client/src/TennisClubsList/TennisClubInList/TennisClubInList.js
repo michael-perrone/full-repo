@@ -24,7 +24,7 @@ class TennisClub extends React.Component {
           instructors: this.props.profileInfo.instructorsWhoAccepted
         };
       }
-      Axios.post("http://localhost:8080/api/getinstructors", instructorObject)
+      Axios.post("/api/getinstructors", instructorObject)
         .then(response => {
           this.setState({
             instructorsAtClub: response.data.instructorsComingBack
@@ -48,7 +48,7 @@ class TennisClub extends React.Component {
         tennisClubId,
         userId: this.props.user.user.id
       };
-      Axios.post("http://localhost:8080/api/userSubscribe", objectToSend)
+      Axios.post("/api/userSubscribe", objectToSend)
         .then(response => {
           if (response.status === 200) {
             this.setState({ subscribeHit: true });

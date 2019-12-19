@@ -15,7 +15,7 @@ function BioForm(props) {
 
   function submitBio() {
     Axios.post(
-      "http://localhost:8080/api/clubProfile",
+      "/api/clubProfile",
       { bio },
       { headers: { "x-auth-token": props.adminToken } }
     ).then(response => {

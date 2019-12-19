@@ -24,7 +24,7 @@ const InstructorProfile = props => {
   useEffect(() => {
     if (props.instructor) {
       axios
-        .get("http://localhost:8080/api/iBookings/instructor", {
+        .get("/api/iBookings/instructor", {
           headers: { "x-auth-token": props.instructorToken }
         })
         .then(response => {

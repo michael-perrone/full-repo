@@ -11,7 +11,7 @@ const UserHome = props => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/userProfile/myProfile", {
+      .get("/api/userProfile/myProfile", {
         headers: {
           "x-auth-token": props.userToken
         }

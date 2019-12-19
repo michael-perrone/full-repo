@@ -9,7 +9,7 @@ const Schedule = props => {
 
   function getBookings(event) {
     axios
-      .post("http://localhost:8080/api/iBookings/schedule", {
+      .post("/api/iBookings/schedule", {
         date: event.target.value,
         instructorId: props.instructor.instructor.id
       })

@@ -38,7 +38,7 @@ class CheckBookingModal extends React.Component {
       playerIds.push(player.id);
     });
     let newPlayers = [...playerIds, this.props.user.user.id];
-    Axios.post("http://localhost:8080/api/getCustomers/saveNewPlayers", {
+    Axios.post("/api/getCustomers/saveNewPlayers", {
       newPlayers,
       bookingId: this.props.objectToModal._id
     }).then(response => {
@@ -74,12 +74,12 @@ class CheckBookingModal extends React.Component {
     this.state.players.forEach(player => {
       newPlayers.push(player.id);
     });
-    Axios.post("http://localhost:8080/api/getCustomers/saveNewPlayers", {
+    Axios.post("/api/getCustomers/saveNewPlayers", {
       newPlayers,
       bookingId: this.props.objectToModal._id
     });
     if (this.state.rebooking) {
-      Axios.post("http://localhost:8080/api/rebooking", {
+      Axios.post("/api/rebooking", {
         rebookName: this.props.instructor.instructor.instructorName,
         bookingId: this.props.objectToModal._id
       });
@@ -98,7 +98,7 @@ class CheckBookingModal extends React.Component {
       this.props.objectToModal.players.length > 0
     ) {
       console.log("hi");
-      Axios.post("http://localhost:8080/api/getPlayers", {
+      Axios.post("/api/getPlayers", {
         bookingId: this.props.objectToModal._id
       }).then(response => {
         this.setState({ players: response.data.players });
@@ -113,7 +113,7 @@ class CheckBookingModal extends React.Component {
       });
     }
     if (this.props.objectToModal) {
-      Axios.post("http://localhost:8080/api/rebooked", {
+      Axios.post("/api/rebooked", {
         currentlyBookedBy: this.props.objectToModal.bookedBy,
         bookingId: this.props.objectToModal
       }).then(response => {

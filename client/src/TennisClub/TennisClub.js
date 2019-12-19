@@ -46,7 +46,7 @@ class TennisClub extends React.Component {
     if (localStorage.getItem("adminToken")) {
       const admin = decoder(localStorage.getItem("adminToken"));
       axios
-        .post("http://localhost:8080/api/club", {
+        .post("/api/club", {
           clubName: admin.admin.clubName
         })
         .then(response => {
@@ -60,7 +60,7 @@ class TennisClub extends React.Component {
         });
     } else {
       axios
-        .post("http://localhost:8080/api/club", {
+        .post("/api/club", {
           clubName: this.props.match.params.clubName
         })
         .then(response => {
@@ -123,7 +123,7 @@ class TennisClub extends React.Component {
     eventsArray.push(event);
     let objectToSend = { eventsArray };
     axios
-      .post("http://localhost:8080/api/clubprofileevents", objectToSend, {
+      .post("/api/clubprofileevents", objectToSend, {
         headers: { "x-auth-token": this.props.adminToken }
       })
       .then(response => {
