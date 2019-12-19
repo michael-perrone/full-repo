@@ -51,6 +51,10 @@ app.use("/api/rebooking", require("./routes/api/rebooking.js"));
 app.use("/api/rebooked", require("./routes/api/rebooked"));
 app.use("/api/iBookings", require("./routes/api/iBookings"));
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
