@@ -8,10 +8,6 @@ connectedDatabase();
 
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.send("hi");
-});
-
 app.use("/api/getInstructor", require("./routes/api/getInstructor"));
 app.use("/api/getBookings", require("./routes/api/getBookings"));
 app.use("/api/notifications", require("./routes/api/notifications"));
