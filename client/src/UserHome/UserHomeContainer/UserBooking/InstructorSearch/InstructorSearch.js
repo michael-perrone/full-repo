@@ -54,9 +54,8 @@ const InstructorsAddForm = props => {
     <div>
       <div
         style={{
-          width: "350px",
+          width: "335px",
           position: "relative",
-          left: "15px",
           zIndex: 101
         }}
       >
@@ -87,6 +86,7 @@ const InstructorsAddForm = props => {
             id={styles.instructorSearch}
           />
           <button
+            style={{ zIndex: 500 }}
             onClick={instructorSearch}
             id={hideButton ? styles.hideButton : ""}
             className={styles.searchButton}
