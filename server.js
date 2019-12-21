@@ -48,6 +48,9 @@ app.use("/api/rebooked", require("./routes/api/rebooked"));
 app.use("/api/iBookings", require("./routes/api/iBookings"));
 
 app.use(express.static("./client/build"));
+app.get("*", function(request, response) {
+  response.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
 const PORT = process.env.PORT || 8080;
 // dwdwd
