@@ -10,6 +10,7 @@ const UserHomeContainer = props => {
   const [clubs, setClubs] = useState([]);
   const [noClubs, setNoClubs] = useState(false);
   const [bookings, setBookings] = useState([]);
+  const [noBookings, setNoBookings] = useState(false);
 
   useEffect(() => {
     Axios.get("/api/userClubs", {
@@ -29,6 +30,8 @@ const UserHomeContainer = props => {
     }).then(response => {
       if (response.status === 200) {
         setBookings(response.data.bookings);
+      } else {
+        setNoBookings(true);
       }
     });
   }, []);
@@ -39,7 +42,7 @@ const UserHomeContainer = props => {
 
   return (
     <div
-      style={{ height: bookings.length < 3 && clubs.length < 3 ? "92vh" : "" }}
+      style={{ height: bookings.length < 2 && clubs.length < 2 ? "92vh" : "" }}
       id={styles.userHomeContainer}
     >
       <div
@@ -56,16 +59,14 @@ const UserHomeContainer = props => {
         />
       </div>
       <div className={styles.half} id={styles.clubsSubscribedHalf}>
-        {clubs.length > 0 && (
-          <p
-            style={{
-              marginBottom: "10px",
-              fontFamily: '"Josefin Sans", sans-serif'
-            }}
-          >
-            Clubs you follow
-          </p>
-        )}
+        <p
+          style={{
+            marginBottom: "10px",
+            fontFamily: '"Josefin Sans", sans-serif'
+          }}
+        >
+          Clubs you follow
+        </p>
         {clubs.length > 0 &&
           clubs.map(individualClub => {
             return (
@@ -75,10 +76,10 @@ const UserHomeContainer = props => {
               />
             );
           })}
+
         {noClubs && (
           <React.Fragment>
-            <p>Clubs you follow</p>
-            <div id={styles.noClubsContainer}>
+            <div className={styles.noClubsBookingsContainer}>
               <p>
                 You have not subscribed to any clubs yet. You can do this by
                 hitting View Clubs below. There you can search for Tennis Clubs
@@ -99,6 +100,16 @@ const UserHomeContainer = props => {
         >
           Your bookings coming up
         </p>
+        {noBookings && (
+          <p
+            style={{ backgroundColor: "white" }}
+            className={styles.noClubsBookingsContainer}
+          >
+            You are currently not scheduled for any bookings. If you would like
+            to schedule one, please search for the club or instructor that you'd
+            like to book with.
+          </p>
+        )}
         {bookings.map(booking => {
           return <UserBooking bookingInfo={booking} />;
         })}

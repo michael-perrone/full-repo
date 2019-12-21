@@ -32,7 +32,7 @@
   }
   100% {
     top: 60px;
-    transform: translate(550px, 400px);
+    transform: translate(550px, 250px);
     opacity: 0;
   }
 }

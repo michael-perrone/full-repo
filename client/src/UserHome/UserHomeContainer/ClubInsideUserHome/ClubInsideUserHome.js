@@ -41,7 +41,11 @@ const ClubInsideUserHome = props => {
           {props.club.clubOpenTime} - {props.club.clubCloseTime}
         </p>
       </div>
-      <div id={styles.rightContainer} className={styles.userSubContainer}>
+      <div
+        id={styles.rightContainer}
+        className={styles.userSubContainer}
+        id={styles.buttonsContainer}
+      >
         <button className={styles.clubButton} onClick={unfollowClub}>
           Unfollow Club
         </button>

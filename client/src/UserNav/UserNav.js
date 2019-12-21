@@ -14,9 +14,14 @@ const UserNav = props => {
   React.useEffect(() => {
     Axios.get("/api/notifications/user", {
       headers: { "x-auth-token": props.userToken }
-    }).then(response => {
-      setUserNotifications(response.data.userNotifications);
-    });
+    })
+      .then(response => {
+        console.log(response.status);
+        setUserNotifications(response.data.userNotifications);
+      })
+      .catch(error => {
+        console.log("thhere was an error");
+      });
   }, []);
 
   function showDropDownHandler() {

@@ -59,14 +59,15 @@ router.post("/instructorBookedUser", async (req, res) => {
 router.get("/user", userAuth, async (req, res) => {
   try {
     let user = await User.findOne({ _id: req.user.id });
-    console.log(user.notifications);
     let notifications = await Notification.find({ _id: user.notifications });
-    console.log(notifications);
-    if (user) {
+    if (user.notifications.length) {
       res.status(200).json({ userNotifications: notifications });
+    } else {
+      res.status(204).json({ userNotifications: [] });
     }
   } catch (error) {
     console.log(error);
+    res.status(500).send();
   }
 });
 
