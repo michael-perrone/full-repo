@@ -49,7 +49,7 @@ app.use("/api/iBookings", require("./routes/api/iBookings"));
 
 app.use(express.static("./client/build"));
 app.get("*", function(request, response) {
-  response.sendFile(path.resolve(__dirname, "build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
 
 const PORT = process.env.PORT || 8080;
