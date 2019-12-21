@@ -61,7 +61,7 @@ const UserHomeContainer = props => {
       <div className={styles.half} id={styles.clubsSubscribedHalf}>
         <p
           style={{
-            marginBottom: "10px",
+            marginBottom: "6px",
             fontFamily: '"Josefin Sans", sans-serif'
           }}
         >
