@@ -52,5 +52,7 @@
   }
   .noClubsBookingsContainer {
     width: 320px;
+    height: 160px;
+    line-height: 22px;
   }
 }

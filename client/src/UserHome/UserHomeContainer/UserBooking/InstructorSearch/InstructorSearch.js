@@ -86,7 +86,7 @@ const InstructorsAddForm = props => {
             id={styles.instructorSearch}
           />
           <button
-            style={{ zIndex: 500 }}
+            style={{ zIndex: "500", backgroundColor: "white" }}
             onClick={instructorSearch}
             id={hideButton ? styles.hideButton : ""}
             className={styles.searchButton}
