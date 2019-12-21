@@ -42,7 +42,12 @@ const UserNav = props => {
       <div id={styles.secondContainer}>
         <p
           onClick={goToClubs}
-          style={{ cursor: "pointer", marginRight: "25px", height: "32px" }}
+          style={{
+            cursor: "pointer",
+            marginRight: "25px",
+            height: "32px",
+            marginLeft: "25px"
+          }}
         >
           View Clubs
         </p>
