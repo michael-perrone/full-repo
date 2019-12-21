@@ -42,8 +42,10 @@ const UserHomeContainer = props => {
 
   return (
     <div
-      style={{ height: bookings.length < 2 && clubs.length < 2 ? "118vh" : "" }}
       id={styles.userHomeContainer}
+      className={
+        bookings.length && clubs.length ? styles.homeContainerClass : ""
+      }
     >
       <div
         style={{

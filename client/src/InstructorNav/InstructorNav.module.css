@@ -61,7 +61,7 @@
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  z-index: 11;
+  z-index: 1000;
 }
 
 @keyframes dropDownSlide {

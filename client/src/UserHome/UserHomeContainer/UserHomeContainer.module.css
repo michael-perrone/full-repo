@@ -29,6 +29,10 @@
   top: 12px;
 }
 
+.homeContainerClass {
+  height: 118vh;
+}
+
 @media (max-width: 775px) {
   #clubsSubscribedHalf {
     position: relative;
@@ -54,5 +58,11 @@
     width: 320px;
     height: 160px;
     line-height: 22px;
+  }
+}
+
+@media (max-height: 900px) and (min-height: 775px) {
+  .homeContainerClass {
+    height: 102vh;
   }
 }
