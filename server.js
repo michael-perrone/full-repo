@@ -47,14 +47,14 @@ app.use("/api/rebooking", require("./routes/api/rebooking.js"));
 app.use("/api/rebooked", require("./routes/api/rebooked"));
 app.use("/api/iBookings", require("./routes/api/iBookings"));
 
-
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "path/to/your/index.html"), function(err) {
     if (err) {
-      res.status(500).send(err)
+      res.status(500).send(err);
     }
-  })
-})
+  });
+});
+// dwdw
 
 app.use(express.static("./client/build"));
 
