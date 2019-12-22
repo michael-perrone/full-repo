@@ -41,7 +41,12 @@ const UserHomeContainer = props => {
   }
 
   return (
-    <div id={styles.userHomeContainer} className={styles.homeContainerClass}>
+    <div
+      id={styles.userHomeContainer}
+      className={
+        bookings.length > 1 || clubs.length > 1 ? "" : styles.homeContainerClass
+      }
+    >
       <div
         style={{
           width: "100%",
