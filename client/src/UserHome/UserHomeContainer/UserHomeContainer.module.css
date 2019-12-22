@@ -30,7 +30,7 @@
 }
 
 .homeContainerClass {
-  height: 99vh;
+  height: 93vh;
 }
 
 @media (max-width: 775px) {
@@ -61,7 +61,7 @@
   }
 }
 
-@media (max-height: 700px) and (min-height: 500px) {
+@media (max-height: 700px) and (min-height: 500px) and (max-width: 600px) {
   .homeContainerClass {
     height: 118vh;
   }
