@@ -116,5 +116,6 @@
     flex-direction: column;
     width: 100%;
     justify-content: space-around;
+    height: 500px;
   }
 }

@@ -22,3 +22,10 @@
   height: 38px;
   font-size: 28px;
 }
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+    height: 600px;
+  }
+}
