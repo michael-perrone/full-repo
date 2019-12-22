@@ -73,5 +73,6 @@
 @media (max-height: 900px) and (min-height: 700px) and (max-width: 600px) {
   .half {
     margin-top: 80px;
+    padding: 20px 0px;
   }
 }
