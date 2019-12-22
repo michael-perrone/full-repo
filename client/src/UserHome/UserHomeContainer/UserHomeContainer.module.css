@@ -14,7 +14,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 120px 0px 5px 0px;
+  margin-top: 80px;
+  padding-bottom: 40px;
 }
 
 .noClubsBookingsContainer {
@@ -52,7 +53,6 @@
     right: 0px;
     order: 2;
     width: 100%;
-    margin-top: 50px;
   }
   .noClubsBookingsContainer {
     width: 320px;
@@ -65,14 +65,16 @@
   .homeContainerClass {
     height: 118vh;
   }
-  .half {
-    margin-top: 80px;
-  }
 }
 
-@media (max-height: 900px) and (min-height: 700px) and (max-width: 600px) {
+@media (max-width: 600px) {
   .half {
+    margin-top: 0px;
+  }
+  #bookingsHalf {
     margin-top: 80px;
-    padding: 20px 0px;
+  }
+  #clubsSubscribedHalf {
+    margin-top: 0px;
   }
 }
