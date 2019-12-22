@@ -3,11 +3,11 @@
 }
 
 #clubsSubscribedHalf {
-  width: 60%;
+  width: 55%;
 }
 
 #bookingsHalf {
-  width: 40%;
+  width: 45%;
 }
 
 .half {
@@ -34,14 +34,7 @@
   height: 93vh;
 }
 
-@media (max-width: 775px) {
-  #clubsSubscribedHalf {
-    position: relative;
-    right: 50px;
-  }
-}
-
-@media (max-width: 670px) {
+@media (max-width: 740px) {
   #userHomeContainer {
     flex-direction: column;
   }
@@ -63,7 +56,7 @@
 
 @media (max-height: 700px) and (min-height: 500px) and (max-width: 600px) {
   .homeContainerClass {
-    height: 118vh;
+    height: 105vh;
   }
 }
 
