@@ -65,4 +65,7 @@
   .homeContainerClass {
     height: 118vh;
   }
+  .half {
+    margin-top: 60px;
+  }
 }
