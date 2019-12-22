@@ -66,6 +66,12 @@
     height: 118vh;
   }
   .half {
-    margin-top: 60px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-height: 900px) and (min-height: 700px) and (max-width: 600px) {
+  .half {
+    margin-top: 80px;
   }
 }
