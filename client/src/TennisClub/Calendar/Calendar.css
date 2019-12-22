@@ -102,12 +102,12 @@ header #logo .icon {
 /* Calendar */
 
 .calendar {
-  display: block;
-  position: relative;
   width: 280px;
+  margin-left: 20px;
   background: var(--neutral-color);
   border: 1px solid var(--border-color);
   box-sizing: border-box;
+  margin-right: 20px;
 }
 
 .calendar .header {

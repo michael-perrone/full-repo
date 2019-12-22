@@ -648,11 +648,8 @@ class TennisClub extends React.Component {
             </div>
             <div>
               <div style={{overflow: 'auto'}} id={styles.courtsShowingHeader}>
-                <Calendar
-                  date={this.state.dateChosenForCourts}
-                  onDateClick={this.onDateClick}
-                />
-                <AdminBooking instructors={this.state.instructors} />
+                <AdminBooking date={this.state.dateChosenForCourts}
+                  onDateClick={this.onDateClick} instructors={this.state.instructors} />
               </div>
               <CourtContainer
                 clubNameAllLower={this.state.club.clubNameAllLower}

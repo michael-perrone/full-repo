@@ -6,6 +6,7 @@ import {
   TIME_SELECTED,
   INSTRUCTOR_CHOSEN
 } from "../../../actions/actions";
+import Calendar from "../../Calendar/Calendar";
 
 class AdminBooking extends React.Component {
   constructor(props) {
@@ -43,82 +44,94 @@ class AdminBooking extends React.Component {
   render() {
     return (
       <div id={styles.bookingHolder}>
-        <div className={styles.bookingHolderContainer}>
-          <p style={{ marginBottom: "-8px" }}>Choose Instructor</p>
-          <div className={styles.bookingHolderSubContainer}>
-            {this.props.instructors.map(element => {
-              return (
-                <p
-                  style={{
-                    backgroundColor:
-                      this.state.instructorSelected._id === element._id
-                        ? "navy"
-                        : "",
-                    color:
-                      this.state.instructorSelected._id === element._id
-                        ? "white"
-                        : ""
-                  }}
-                  onClick={this.selectInstructorWithClick(element)}
-                  className={styles.itemPTag}
-                >
-                  {element.fullName}
-                </p>
-              );
-            })}
-          </div>
-        </div>
-        <div className={styles.bookingHolderContainer}>
-          <p style={{ marginBottom: "-8px" }}>Choose Time Amount</p>
-          <div className={styles.bookingHolderSubContainer}>
-            {this.props.times.map(element => {
-              return (
-                <p
-                  style={{
-                    backgroundColor:
-                      this.state.timeChosen === element ? "navy" : "",
-                    color: this.state.timeChosen === element ? "white" : ""
-                  }}
-                  onClick={this.selectTime(element)}
-                  className={styles.itemPTag}
-                >
-                  {element}
-                </p>
-              );
-            })}
-          </div>
-        </div>
-        <div className={styles.bookingHolderContainer}>
-          <p style={{ marginBottom: "-8px" }}>Choose Booking Type</p>
-          <div className={styles.bookingHolderSubContainer}>
-            {this.props.bookingTypes.map(element => {
-              if (
-                this.props.user &&
-                (element === "Open Clinic" ||
-                  element === "Employee Court Time" ||
-                  element === "Tournament")
-              ) {
-                return "";
-              } else if (
-                this.props.admin ||
-                this.props.instructor ||
-                this.props.user
-              ) {
+        <div
+          style={{
+            width: "1100px",
+            display: "flex",
+            justifyContent: "space-around"
+          }}
+        >
+          <Calendar
+            date={this.props.date}
+            onDateClick={this.props.onDateClick}
+          />
+          <div className={styles.bookingHolderContainer}>
+            <p style={{ marginBottom: "-8px" }}>Choose Instructor</p>
+            <div className={styles.bookingHolderSubContainer}>
+              {this.props.instructors.map(element => {
                 return (
                   <p
                     style={{
                       backgroundColor:
-                        this.state.bookingType === element ? "navy" : "",
-                      color: this.state.bookingType === element ? "white" : ""
+                        this.state.instructorSelected._id === element._id
+                          ? "navy"
+                          : "",
+                      color:
+                        this.state.instructorSelected._id === element._id
+                          ? "white"
+                          : ""
                     }}
-                    onClick={this.selectBookingType(element)}
+                    onClick={this.selectInstructorWithClick(element)}
+                    className={styles.itemPTag}
+                  >
+                    {element.fullName}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.bookingHolderContainer}>
+            <p style={{ marginBottom: "-8px" }}>Choose Time Amount</p>
+            <div className={styles.bookingHolderSubContainer}>
+              {this.props.times.map(element => {
+                return (
+                  <p
+                    style={{
+                      backgroundColor:
+                        this.state.timeChosen === element ? "navy" : "",
+                      color: this.state.timeChosen === element ? "white" : ""
+                    }}
+                    onClick={this.selectTime(element)}
                     className={styles.itemPTag}
                   >
                     {element}
                   </p>
                 );
-              }
-            })}
+              })}
+            </div>
+          </div>
+          <div className={styles.bookingHolderContainer}>
+            <p style={{ marginBottom: "-8px" }}>Choose Booking Type</p>
+            <div className={styles.bookingHolderSubContainer}>
+              {this.props.bookingTypes.map(element => {
+                if (
+                  this.props.user &&
+                  (element === "Open Clinic" ||
+                    element === "Employee Court Time" ||
+                    element === "Tournament")
+                ) {
+                  return "";
+                } else if (
+                  this.props.admin ||
+                  this.props.instructor ||
+                  this.props.user
+                ) {
+                  return (
+                    <p
+                      style={{
+                        backgroundColor:
+                          this.state.bookingType === element ? "navy" : "",
+                        color: this.state.bookingType === element ? "white" : ""
+                      }}
+                      onClick={this.selectBookingType(element)}
+                      className={styles.itemPTag}
+                    >
+                      {element}
+                    </p>
+                  );
+                }
+              })}
+            </div>
           </div>
         </div>
       </div>

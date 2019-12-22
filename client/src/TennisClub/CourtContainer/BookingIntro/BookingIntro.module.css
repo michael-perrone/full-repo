@@ -11,3 +11,9 @@
 #bookingP {
   width: 725px;
 }
+
+@media (max-width: 750px) {
+  #bookingP {
+    width: 90%;
+  }
+}
