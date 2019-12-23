@@ -5,6 +5,8 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import OtherAlert from "../../OtherAlerts/OtherAlerts";
 
+// clubName
+
 class TennisClub extends React.Component {
   constructor(props) {
     super(props);
@@ -82,8 +84,8 @@ class TennisClub extends React.Component {
             />
           );
         })}
-        <div>
-          <p id={styles.clubName}>{this.props.club.clubName}</p>
+        <div id={styles.clubName}>
+          <p>{this.props.club.clubName}</p>
         </div>
         <div id={styles.tennisClubSubHolder}>
           <div id={styles.imageHolder}>
