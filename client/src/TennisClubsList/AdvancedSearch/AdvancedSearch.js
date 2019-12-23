@@ -35,30 +35,34 @@ const AdvancedSearch = props => {
         Club Search
       </p>
       <div id={styles.inputContainer}>
-        <input
-          onChange={handleCity}
-          value={city}
-          placeholder="Club City"
-          className={styles.searchInput}
-        />
-        <input
-          onChange={handleZip}
-          value={zip}
-          placeholder="Club Zipcode"
-          className={styles.searchInput}
-        />
-        <input
-          onChange={handleState}
-          value={state}
-          placeholder="Club State"
-          className={styles.searchInput}
-        />
-        <button
-          onClick={props.advancedSearchFunction(city, state, zip)}
-          id={styles.searchButton}
-        >
-          Search
-        </button>
+        <div id={styles.extraSizeDiv} className={styles.sizeDiv}>
+          <input
+            onChange={handleCity}
+            value={city}
+            placeholder="Club City"
+            className={styles.searchInput}
+          />
+          <input
+            onChange={handleZip}
+            value={zip}
+            placeholder="Club Zipcode"
+            className={styles.searchInput}
+          />
+        </div>
+        <div className={styles.sizeDiv}>
+          <input
+            onChange={handleState}
+            value={state}
+            placeholder="Club State"
+            className={styles.searchInput}
+          />
+          <button
+            onClick={props.advancedSearchFunction(city, state, zip)}
+            id={styles.searchButton}
+          >
+            Search
+          </button>
+        </div>
       </div>
     </div>
   );

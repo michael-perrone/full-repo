@@ -5,8 +5,6 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import OtherAlert from "../../OtherAlerts/OtherAlerts";
 
-// clubName
-
 class TennisClub extends React.Component {
   constructor(props) {
     super(props);
@@ -88,76 +86,77 @@ class TennisClub extends React.Component {
           <p>{this.props.club.clubName}</p>
         </div>
         <div id={styles.tennisClubSubHolder}>
-          <div id={styles.imageHolder}>
-            <img
-              id={styles.clubImage}
-              src="http://www.ludlowtennisclub.com/images/480_IMG_0930S.JPG"
-              alt="club"
-            />
-            <div
-              style={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "space-around"
-              }}
-            >
-              <button
-                className={styles.viewButton}
-                onClick={() =>
-                  this.props.push(
-                    `/clubs/${this.removeSpaces(this.props.club.clubName)}`
-                  )
-                }
+          <div id={styles.clubHolder}>
+            <div id={styles.imageHolder}>
+              <img
+                id={styles.clubImage}
+                src="http://www.ludlowtennisclub.com/images/480_IMG_0930S.JPG"
+                alt="club"
+              />
+              <div
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  justifyContent: "space-around"
+                }}
               >
-                <i
-                  style={{
-                    paddingRight: "4px",
-                    fontSize: "14px",
-                    borderRight: "1px solid black",
-                    marginRight: "8px"
-                  }}
-                  className="fas fa-building"
-                />{" "}
-                View Club
-              </button>
-              {!this.state.subscribeHit && (
                 <button
-                  onClick={this.subscribeToClub(this.props.club._id)}
-                  style={{ left: "78%", cursor: "pointer" }}
                   className={styles.viewButton}
+                  onClick={() =>
+                    this.props.push(
+                      `/clubs/${this.removeSpaces(this.props.club.clubName)}`
+                    )
+                  }
                 >
                   <i
                     style={{
-                      marginLeft: "-3px",
                       paddingRight: "4px",
                       fontSize: "14px",
                       borderRight: "1px solid black",
                       marginRight: "8px"
                     }}
-                    className="far fa-check-square"
-                  />
-                  Follow
+                    className="fas fa-building"
+                  />{" "}
+                  View Club
                 </button>
-              )}
+                {!this.state.subscribeHit && (
+                  <button
+                    onClick={this.subscribeToClub(this.props.club._id)}
+                    style={{ left: "78%", cursor: "pointer" }}
+                    className={styles.viewButton}
+                  >
+                    <i
+                      style={{
+                        marginLeft: "-3px",
+                        paddingRight: "4px",
+                        fontSize: "14px",
+                        borderRight: "1px solid black",
+                        marginRight: "8px"
+                      }}
+                      className="far fa-check-square"
+                    />
+                    Follow
+                  </button>
+                )}
 
-              {this.state.subscribeHit && (
-                <div
-                  style={{
-                    height: "22px",
-                    width: "80px",
-                    backgroundColor: "lightgreen",
-                    border: "1px solid black",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                  }}
-                >
-                  <p>Subcribed!</p>
-                </div>
-              )}
+                {this.state.subscribeHit && (
+                  <div
+                    style={{
+                      height: "22px",
+                      width: "80px",
+                      backgroundColor: "lightgreen",
+                      border: "1px solid black",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center"
+                    }}
+                  >
+                    <p>Subcribed!</p>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-          <div id={styles.clubHolder}>
+
             <div style={{ fontSize: "12px" }}>
               <div
                 id={styles.increasedWidth}
@@ -182,7 +181,9 @@ class TennisClub extends React.Component {
                 </p>
               </div>
             </div>
-            <div className={styles.borderSurroundingDivs}>
+          </div>
+          <div id={styles.clubHolder}>
+            <div id={styles.something} className={styles.borderSurroundingDivs}>
               <p id={styles.instructorsP}>Instructors</p>
               {this.props.profileInfo &&
                 this.state.instructorsAtClub.map((element, index) => {
