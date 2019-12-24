@@ -510,7 +510,14 @@ class CourtContainer extends React.Component {
             showTryingToBookModal={this.showTryingToBookModal}
           />
         </div>
-        <div style={{ overflow: "auto" }} onClick={this.courtClickedOn}>
+        <div
+          style={{
+            overflow: "auto",
+            display: "flex",
+            justifyContent: "center"
+          }}
+          onClick={this.courtClickedOn}
+        >
           <div
             id={styles.courtContainer}
             style={{
