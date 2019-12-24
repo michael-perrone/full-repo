@@ -120,6 +120,9 @@ class LoginForm extends React.Component {
               Login
             </button>
             <p
+              style={{
+                color: this.props.errorColor ? this.props.errorColor : ""
+              }}
               className={styles.errorNoAnimation}
               id={this.state.errorLoggingIn ? styles.errorAnimation : ""}
             >

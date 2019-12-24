@@ -11,7 +11,6 @@
   transition-duration: 2s;
 }
 
-
 #form {
   transition-duration: 2s;
   height: 367px;
@@ -92,13 +91,13 @@
   outline: none;
 }
 
-.divWidthControl{
+.divWidthControl {
   margin-top: 3px;
 }
 
 #instructorSignUpAndRegSignUp {
-  margin:8px 0 20px 0;
-  display: flex; 
+  margin: 8px 0 20px 0;
+  display: flex;
   justify-content: space-between;
   position: relative;
   width: 310px;
@@ -128,7 +127,6 @@
   display: flex;
   justify-content: flex-start;
 }
-
 
 @media (min-width: 700px) {
   .mediaAgeGenderDiv {
@@ -172,7 +170,7 @@
     margin-bottom: 8px;
   }
 
-  #registerP {
+  .registerP {
     font-size: 28px;
   }
 
@@ -188,7 +186,6 @@
     border-radius: 6px;
     font-size: 12px;
     left: 0px;
-
   }
 
   #instructorSignUpAndRegSignUp {
@@ -203,7 +200,6 @@
   }
   #form {
     width: 290px;
-
   }
 
   #ageGenderDiv {
