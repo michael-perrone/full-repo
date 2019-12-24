@@ -300,7 +300,7 @@ class CourtColumns extends React.PureComponent {
           style={{
             width:
               this.props.numberCourts < 5
-                ? `${91 / this.props.numberCourts}vw`
+                ? `${94 / this.props.numberCourts}vw`
                 : "170px"
           }}
         >

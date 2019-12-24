@@ -512,7 +512,7 @@ class CourtContainer extends React.Component {
         </div>
         <div
           style={{
-            overflow: "auto",
+            overflow: "auto"
           }}
           onClick={this.courtClickedOn}
         >
@@ -522,7 +522,7 @@ class CourtContainer extends React.Component {
               width:
                 this.props.numberCourts > 4
                   ? `${this.props.numberCourts * 178}px`
-                  : "92vw"
+                  : "94vw"
             }}
           >
             {this.courtNumbersToCourtColumns().map((element, index) => {
