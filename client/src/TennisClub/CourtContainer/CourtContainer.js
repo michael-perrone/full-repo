@@ -513,8 +513,6 @@ class CourtContainer extends React.Component {
         <div
           style={{
             overflow: "auto",
-            display: "flex",
-            justifyContent: "center"
           }}
           onClick={this.courtClickedOn}
         >
