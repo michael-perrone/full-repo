@@ -519,10 +519,7 @@ class CourtContainer extends React.Component {
           <div
             id={styles.courtContainer}
             style={{
-              width:
-                this.props.numberCourts > 4
-                  ? `${this.props.numberCourts * 178}px`
-                  : "94vw"
+              width: `${this.props.numberCourts * 178}px`
             }}
           >
             {this.courtNumbersToCourtColumns().map((element, index) => {
