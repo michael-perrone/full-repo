@@ -26,7 +26,7 @@ class NeedToLoginPage extends React.Component {
           </div>
           <div id={styles.maybeGone}>
             <img id={styles.tennisBall} src={tennisBall}></img>
-            <img src={tennisNetCropped} alt="net" />
+            <img style={{ width: "400px" }} src={tennisNetCropped} alt="net" />
           </div>
         </div>
         <div id={styles.registerFormRightSide}>

@@ -43,7 +43,7 @@
     transform: translate(200px, 100px) rotate(540deg);
   }
   50% {
-    transform: translate(350px, 200px) rotate(1080deg);
+    transform: translate(450px, 170px) rotate(1080deg);
   }
   75% {
     transform: translate(200px, 100px) rotate(540deg);
