@@ -6,7 +6,11 @@
   align-items: center;
   transform: translate(-700px, 300px);
   transition-duration: 2s;
-  
+}
+
+#uniqueSelect {
+  height: 30px;
+  width: 256px;
 }
 
 #clubLabel1 {
@@ -76,7 +80,6 @@
   border: none;
   box-shadow: 1px 1px 10px black;
   align-self: flex-end;
-
 }
 
 #buttonGoBackHolder {
@@ -87,9 +90,6 @@
   margin-bottom: 14px;
   margin-top: 12px;
 }
-
-
-
 
 #input4 {
   width: 198px;
@@ -107,39 +107,38 @@
   top: -4px;
 }
 
-
-@media(max-width: 700px) and (min-width: 0px) {
+@media (max-width: 700px) and (min-width: 0px) {
   #registerForm {
     width: 290px;
   }
-    #clubLabels {
-      display: inline;
-    }
-    #clubLabel2 {
-      top: -5px;
-      display: inline;
-    }
+  #clubLabels {
+    display: inline;
+  }
+  #clubLabel2 {
+    top: -5px;
+    display: inline;
+  }
 
-    #clubLabel1 {
-      display: inline;
-      top: -8px;
-    }
+  #clubLabel1 {
+    display: inline;
+    top: -8px;
+  }
 
-    #timeSelectors {
-      width: 98px;
-      margin-right: 22px;
-      height: 26px;
-      font-size: 14px;
-    }
+  #timeSelectors {
+    width: 98px;
+    margin-right: 22px;
+    height: 26px;
+    font-size: 14px;
+  }
 
-    #numberCourtsSelecter {
-      width: 98px;
-      height: 26px;
-      margin-right: 17px;
-      font-size: 14px;
-    }
+  #numberCourtsSelecter {
+    width: 98px;
+    height: 26px;
+    margin-right: 17px;
+    font-size: 14px;
+  }
 
-    #input4 {
-      width: 240px;
-    }
+  #input4 {
+    width: 240px;
+  }
 }

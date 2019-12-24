@@ -1,10 +1,9 @@
-#courtColumn {
+.courtColumn {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
-  width: 200px;
-  height: 200vh;
+  height: 300vh;
   display: flex;
   flex-direction: column;
 }

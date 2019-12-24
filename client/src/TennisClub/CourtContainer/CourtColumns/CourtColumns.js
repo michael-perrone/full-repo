@@ -296,8 +296,13 @@ class CourtColumns extends React.PureComponent {
       <div>
         <p style={{ textAlign: "center" }}>Court: {this.props.courtNumber}</p>
         <div
-          id={styles.courtColumn}
-          style={{ width: `${91 / this.props.numberCourts}vw` }}
+          className={styles.courtColumn}
+          style={{
+            width:
+              this.props.numberCourts < 5
+                ? `${91 / this.props.numberCourts}vw`
+                : "170px"
+          }}
         >
           {this.state.courtsInColumn.map((element, index) => {
             return (

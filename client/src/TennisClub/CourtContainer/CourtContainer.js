@@ -187,36 +187,27 @@ class CourtContainer extends React.Component {
                 newBooking: firstResponse.data.newBooking._id
               };
               axios
-                .post(
-                  "/api/instructorCourtsBooked",
-                  objectToSend
-                )
+                .post("/api/instructorCourtsBooked", objectToSend)
                 .then(secondResponse => {
                   if (secondResponse.status === 200 && this.props.user) {
-                    axios.post(
-                      "/api/notifications/userBookedInstructor",
-                      {
-                        instructorId: this.props.instructorChosen
-                          .instructorChosen._id,
-                        userId: this.props.user.user._id,
-                        bookingId: firstResponse.data.newBooking._id
-                      }
-                    );
+                    axios.post("/api/notifications/userBookedInstructor", {
+                      instructorId: this.props.instructorChosen.instructorChosen
+                        ._id,
+                      userId: this.props.user.user._id,
+                      bookingId: firstResponse.data.newBooking._id
+                    });
                   }
                   if (
                     secondResponse.status === 200 &&
                     this.props.instructor &&
                     firstResponse.data.newBooking.players.length > 0
                   ) {
-                    axios.post(
-                      "/api/notifications/instructorBookedUser",
-                      {
-                        users: firstResponse.data.newBooking.players,
-                        instructorId: this.props.instructorChosen
-                          .instructorChosen._id,
-                        bookingId: firstResponse.data.newBooking._id
-                      }
-                    );
+                    axios.post("/api/notifications/instructorBookedUser", {
+                      users: firstResponse.data.newBooking.players,
+                      instructorId: this.props.instructorChosen.instructorChosen
+                        ._id,
+                      bookingId: firstResponse.data.newBooking._id
+                    });
                   }
                 })
                 .catch(error => {
@@ -517,33 +508,43 @@ class CourtContainer extends React.Component {
             showTryingToBookModal={this.showTryingToBookModal}
           />
         </div>
-        <div id={styles.courtContainer} onClick={this.courtClickedOn}>
-          {this.courtNumbersToCourtColumns().map((element, index) => {
-            return (
-              <CourtColumns
-                hoverNumber={this.state.courtHoverNumber}
-                courtClicked={this.courtClicked}
-                numberCourts={parseInt(this.props.numberCourts)}
-                cancelModal={this.cancelBookingModal}
-                bookingArray={this.state.bookingArray}
-                getModalObject={this.showBookingModal}
-                getCourt={this.courtArray}
-                clubName={this.props.clubName}
-                bookedCourts={this.state.bookedCourts}
-                clubOpenNumber={this.convertTimeToCourts(
-                  this.props.clubOpenTime
-                )}
-                clubCloseNumber={this.convertTimeToCourts(
-                  this.props.clubCloseTime
-                )}
-                key={element.courtNumber}
-                courtNumber={element.courtNumber}
-                firstSlotInArray={this.state.firstSlotInArray}
-                lastSlotInArray={this.state.lastSlotInArray}
-                date={this.props.date}
-              />
-            );
-          })}
+        <div style={{ overflow: "auto" }} onClick={this.courtClickedOn}>
+          <div
+            id={styles.courtContainer}
+            style={{
+              width:
+                this.props.numberCourts > 6
+                  ? `${this.props.numberCourts * 178}px`
+                  : "92vw"
+            }}
+          >
+            {this.courtNumbersToCourtColumns().map((element, index) => {
+              return (
+                <CourtColumns
+                  hoverNumber={this.state.courtHoverNumber}
+                  courtClicked={this.courtClicked}
+                  numberCourts={parseInt(this.props.numberCourts)}
+                  cancelModal={this.cancelBookingModal}
+                  bookingArray={this.state.bookingArray}
+                  getModalObject={this.showBookingModal}
+                  getCourt={this.courtArray}
+                  clubName={this.props.clubName}
+                  bookedCourts={this.state.bookedCourts}
+                  clubOpenNumber={this.convertTimeToCourts(
+                    this.props.clubOpenTime
+                  )}
+                  clubCloseNumber={this.convertTimeToCourts(
+                    this.props.clubCloseTime
+                  )}
+                  key={element.courtNumber}
+                  courtNumber={element.courtNumber}
+                  firstSlotInArray={this.state.firstSlotInArray}
+                  lastSlotInArray={this.state.lastSlotInArray}
+                  date={this.props.date}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     );
