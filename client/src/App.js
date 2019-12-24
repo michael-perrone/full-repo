@@ -45,7 +45,7 @@ class App extends React.Component {
           exact
           component={this.props.user ? TennisClubsList : NeedToLoginPage}
         />
-        <Route path="/clubs/:clubName" exact component={TennisClub} />
+        <Route path="/clubs/:clubName" exact component={this.props.user || this.props.instructor || this.props.admin ? TennisClub : NeedToLoginPage} />
 
         <Route path="/registerTennisClub" exact component={TennisClubSignup} />
         {instructorToken && (

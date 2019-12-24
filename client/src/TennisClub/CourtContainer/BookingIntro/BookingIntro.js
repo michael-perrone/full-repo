@@ -5,7 +5,33 @@ class BookingIntro extends React.Component {
   render() {
     return (
       <div id={styles.bookingIntroSubDiv}>
-        <p id={styles.courtP}>Court Schedule</p>
+        <div style={{ display: "flex" }}>
+          <div
+            className={styles.moveButtons}
+            id={styles.leftButton}
+            onClick={() => {
+              document.getElementById("hello").scrollLeft -= 180;
+            }}
+          >
+            <i
+              style={{ fontSize: "38px" }}
+              class="fas fa-arrow-circle-left"
+            ></i>
+          </div>
+          <p id={styles.courtP}>Court Schedule</p>
+          <div
+            className={styles.moveButtons}
+            id={styles.rightButton}
+            onClick={() => {
+              document.getElementById("hello").scrollLeft += 180;
+            }}
+          >
+            <i
+              style={{ fontSize: "38px" }}
+              class="fas fa-arrow-circle-right"
+            ></i>
+          </div>
+        </div>
         <p id={styles.bookingP}>
           You may book a court anytime from {this.props.openTime} to{" "}
           {this.props.closeTime}. To book a court, please select your preferred
