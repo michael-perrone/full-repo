@@ -64,7 +64,7 @@ class CourtContainer extends React.Component {
     setTimeout(() => this.setState({ showDeleteSuccess: true }), 200);
   }
 
-//dwd 
+  //dwd
 
   deleteBooking(bookingId) {
     return () => {
@@ -515,7 +515,7 @@ class CourtContainer extends React.Component {
             id={styles.courtContainer}
             style={{
               width:
-                this.props.numberCourts > 6
+                this.props.numberCourts > 4
                   ? `${this.props.numberCourts * 178}px`
                   : "92vw"
             }}
