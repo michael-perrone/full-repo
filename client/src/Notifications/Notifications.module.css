@@ -1,5 +1,5 @@
 .notificationsContainer {
-  width: 350px;
+  width: 330px;
   height: 600px;
   position: fixed;
   left: 36%;
@@ -26,4 +26,16 @@
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 700px) {
+  .notificationsContainer {
+    left: 14%;
+  }
+}
+
+@media (max-width: 450px) {
+  .notificationsContainer {
+    left: 2%;
+  }
 }
