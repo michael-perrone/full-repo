@@ -45,15 +45,17 @@ class ServicesForm extends React.Component {
         this.props.profile.services.forEach(element => {
           name.push(Object.keys(element));
         });
-        for (let i = 0; i < 6; i++) {
-          if (this.props.profile.services[i][`${name[i]}`] === "Yes") {
-            newServicesForm[`${name[i]}`] = "Yes";
+        /*         if (this.props.profile.services) {
+          for (let i = 0; i < 6; i++) {
+            if (this.props.profile.services[i][`${name[i]}`] === "Yes") {
+              newServicesForm[`${name[i]}`] = "Yes";
+            }
+            if (this.props.profile.services[i][`${name[i]}`] === "No") {
+              newServicesForm[`${name[i]}`] = "No";
+            }
           }
-          if (this.props.profile.services[i][`${name[i]}`] === "No") {
-            newServicesForm[`${name[i]}`] = "No";
-          }
-        }
-        this.setState({ servicesForm: newServicesForm });
+          this.setState({ servicesForm: newServicesForm });
+        } */
       }
     }
   }
