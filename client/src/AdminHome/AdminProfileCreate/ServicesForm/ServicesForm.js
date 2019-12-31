@@ -30,6 +30,8 @@ class ServicesForm extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    console.log(prevProps);
+    console.log(this.props);
     if (
       Object.keys(prevProps.profile).length === 0 &&
       prevProps.profile.constructor === Object &&
@@ -45,17 +47,16 @@ class ServicesForm extends React.Component {
         this.props.profile.services.forEach(element => {
           name.push(Object.keys(element));
         });
-        /*         if (this.props.profile.services) {
-          for (let i = 0; i < 6; i++) {
-            if (this.props.profile.services[i][`${name[i]}`] === "Yes") {
-              newServicesForm[`${name[i]}`] = "Yes";
-            }
-            if (this.props.profile.services[i][`${name[i]}`] === "No") {
-              newServicesForm[`${name[i]}`] = "No";
-            }
+        console.log(name);
+        for (let i = 0; i < this.props.profile.services.length; i++) {
+          if (this.props.profile.services[i][`${name[i]}`] === "Yes") {
+            newServicesForm[`${name[i]}`] = "Yes";
           }
-          this.setState({ servicesForm: newServicesForm });
-        } */
+          if (this.props.profile.services[i][`${name[i]}`] === "No") {
+            newServicesForm[`${name[i]}`] = "No";
+          }
+        }
+        this.setState({ servicesForm: newServicesForm });
       }
     }
   }

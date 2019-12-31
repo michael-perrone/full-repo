@@ -4,6 +4,7 @@ import Axios from "axios";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import OtherAlert from "../../../OtherAlerts/OtherAlerts";
+import { INSTRUCTOR_LOGIN_SUCCESS } from "../../../actions/actions";
 
 const ClubAddedInstructorNotification = props => {
   const [clubAccepted, setClubAccepted] = useState(false);
@@ -49,21 +50,27 @@ const ClubAddedInstructorNotification = props => {
 
   function accept() {
     getClubName();
+    console.log(clubNameState);
     const objectToSend = {
       clubId: props.notification.notificationFromTennisClub,
       clubName: clubNameState,
       instructorId: props.instructor.instructor.id,
-      notificationId: props.notification._id
+      notificationId: props.notification._id,
+      instructorName: props.instructor.instructor.instructorName
     };
     setClubAccepted(true);
-    Axios.post(
-      "/api/notifications/instructorclickedyes",
-      objectToSend
-    ).then(response => {
-      if ((response.status = 200)) {
-        props.setNew(response.data.newNotifications)();
+    Axios.post("/api/notifications/instructorclickedyes", objectToSend).then(
+      response => {
+        console.log(response);
+        console.log(response.data.token);
+        if ((response.status = 200)) {
+          props.setNew(response.data.newNotifications)();
+        }
+        if (response.data.token) {
+          props.instructorTokenChange(response.data.token);
+        }
       }
-    });
+    );
   }
   function deny() {
     // DONT KNOW YET
@@ -136,6 +143,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    instructorTokenChange: instructorToken =>
+      dispatch({ type: INSTRUCTOR_LOGIN_SUCCESS, payload: { instructorToken } })
+  };
+};
+
 export default withRouter(
-  connect(mapStateToProps)(ClubAddedInstructorNotification)
+  connect(mapStateToProps, mapDispatchToProps)(ClubAddedInstructorNotification)
 );

@@ -20,13 +20,13 @@ class NeedToLoginPage extends React.Component {
               }}
             >
               To see the clubs that have signed up for our site, you must be
-              logged in as a user. We do this to protect our clubs privacy. We
-              hope you understand.
+              logged in as a user or be added as an instructor by this club. We
+              do this to protect our clubs privacy. We hope you understand.
             </p>
           </div>
           <div id={styles.maybeGone}>
             <img id={styles.tennisBall} src={tennisBall}></img>
-            <img style={{ width: "400px" }} src={tennisNetCropped} alt="net" />
+            <img style={{ width: "360px" }} src={tennisNetCropped} alt="net" />
           </div>
         </div>
         <div id={styles.registerFormRightSide}>

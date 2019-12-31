@@ -7,7 +7,10 @@ const Notification = require("../../models/Notification");
 const ClubProfile = require("../../models/ClubProfile");
 const CourtBooked = require("../../models/CourtBooked");
 const User = require("../../models/User");
+const TennisClub = require("../../models/TennisClub");
 const userAuth = require("../../middleware/authUser");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 router.post("/userBookedInstructor", async (req, res) => {
   try {
@@ -143,7 +146,32 @@ router.post("/instructorclickedyes", async (req, res) => {
     notifications.sort(function(a, b) {
       return b.notificationDate - a.notificationDate;
     });
-    res.status(200).json({ newNotifications: notifications });
+
+    const tennisClub = await TennisClub.findOne({
+      _id: notification.notificationFromTennisClub
+    });
+
+    const payload = {
+      instructor: {
+        instructorName: req.body.instructorName,
+        id: req.body.instructorId,
+        clubName: tennisClub.clubName
+      }
+    };
+    console.log(payload, "dwdwd");
+    console.log("dwdwddwd");
+    jwt.sign(
+      payload,
+      config.get("instructorSecret"),
+      { expiresIn: 360000 },
+      (error, token) => {
+        if (error) {
+          throw error;
+        } else {
+          res.status(200).json({ token, newNotifications: notifications });
+        }
+      }
+    );
   } catch (error) {
     console.log(error);
   }

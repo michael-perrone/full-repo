@@ -37,6 +37,22 @@ class App extends React.Component {
       adminToken = decoder(localStorage.getItem("adminToken"));
     }
 
+    let clubName = this.props.location.pathname.split("/")[2];
+
+    let instructorClubName;
+    if (
+      this.props.instructor &&
+      this.props.instructor.instructor.clubName !== undefined
+    ) {
+      instructorClubName = this.props.instructor.instructor.clubName
+        .split(" ")
+        .join("");
+    }
+
+    console.log(clubName);
+    console.log(instructorClubName);
+
+    console.log(this.props);
     return (
       <Switch>
         <Route path="/values" exact component={Values} />
@@ -45,7 +61,15 @@ class App extends React.Component {
           exact
           component={this.props.user ? TennisClubsList : NeedToLoginPage}
         />
-        <Route path="/clubs/:clubName" exact component={this.props.user || this.props.instructor || this.props.admin ? TennisClub : NeedToLoginPage} />
+        <Route
+          path="/clubs/:clubName"
+          exact
+          component={
+            this.props.user || clubName === instructorClubName
+              ? TennisClub
+              : NeedToLoginPage
+          }
+        />
 
         <Route path="/registerTennisClub" exact component={TennisClubSignup} />
         {instructorToken && (
@@ -140,7 +164,9 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.authReducer.user
+    user: state.authReducer.user,
+    instructor: state.authReducer.instructor,
+    admin: state.authReducer.admin
   };
 };
 
