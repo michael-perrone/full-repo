@@ -1,6 +1,6 @@
 #image {
   height: 180px;
-  width: 190px;
+  width: 200px;
   box-shadow: 1px 1px 5px black;
 }
 
@@ -122,6 +122,6 @@
   }
 
   #image {
-    width: 200px;
+    width: 300px;
   }
 }
