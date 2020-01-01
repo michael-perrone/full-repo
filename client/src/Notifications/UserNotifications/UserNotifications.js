@@ -2,7 +2,6 @@ import React from "react";
 import InstructorAddeduser from "./InstructorAddedUser/InstructorAddedUser";
 
 const UserNotifications = props => {
-  console.log(props);
   return props.userNotifications ? (
     props.userNotifications.map(notification => {
       if (notification.notificationType === "InstructorBookedUser") {
@@ -14,7 +13,10 @@ const UserNotifications = props => {
       }
     })
   ) : (
-    <div></div>
+    <div style={{ padding: "40px 40px" }}>
+      You do not have any notifications yet. When you get one, we will let you
+      know!
+    </div>
   );
 };
 export default UserNotifications;
