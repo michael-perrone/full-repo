@@ -44,7 +44,7 @@ const InstructorProfile = props => {
               <div id={styles.imageContainer}>
                 <img
                   id={styles.image}
-                  src="http://www.advertisernewssouth.com/binrepository/576x432/0c0/0d0/none/808998/HXXQ/SPORTS_130209965_AR_0_0_AS20130206130209965_MG1049249.jpg"
+                  src="https://www.njherald.com/storyimage/TH/20150621/NEWS/909015080/AR/0/AR-909015080.jpg"
                   alt="person"
                 />
               </div>

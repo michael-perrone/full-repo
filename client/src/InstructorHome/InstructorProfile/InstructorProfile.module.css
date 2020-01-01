@@ -1,5 +1,4 @@
 #image {
-  border-radius: 70%;
   height: 180px;
   width: 190px;
   box-shadow: 1px 1px 5px black;
@@ -41,8 +40,8 @@
   font-size: 22px;
   position: relative;
   color: rgb(46, 46, 46);
-  top: -10px;
-  font-family: 'Averia Serif Libre', cursive;
+  top: 15px;
+  font-family: "Averia Serif Libre", cursive;
   text-shadow: 2px 2px rgb(255, 255, 255);
 }
 
@@ -112,10 +111,17 @@
 }
 
 @media (max-width: 700px) {
+  #bottomPartBar {
+    width: 340px;
+  }
   #instructorProfileLeftBar {
     flex-direction: column;
     width: 100%;
     justify-content: space-around;
     height: 500px;
+  }
+
+  #image {
+    width: 200px;
   }
 }
