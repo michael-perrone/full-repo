@@ -58,12 +58,14 @@ class TennisClubsList extends React.Component {
       });
   }
 
-  advancedSearchFunction(city, state, zip) {
-    return () => {
+  advancedSearchFunction(city, state, zip, clubName) {
+    return (event) => {
+      event.preventDefault();
       const objectToSend = {
         city,
         state,
-        zip
+        zip,
+        clubName
       };
       this.setState({ searchError: "" });
       axios
@@ -72,6 +74,7 @@ class TennisClubsList extends React.Component {
         })
         .then(response => {
           this.setState({ tennisClubs: response.data.tennisClubsBack });
+          this.setState({ advancedSearchHit: true });
         })
         .catch(error => {
           if (error.response.status === 406) {

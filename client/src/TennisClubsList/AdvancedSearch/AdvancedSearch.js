@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./AdvancedSearch.module.css";
+
 const AdvancedSearch = props => {
   const [zip, setZip] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [clubName, setClubName] = useState("");
 
   function handleCity(event) {
     event.preventDefault();
@@ -20,6 +22,11 @@ const AdvancedSearch = props => {
     setZip(event.target.value);
   }
 
+  function handleClubName(event) {
+    event.preventDefault();
+    setClubName(event.target.value);
+  }
+
   return (
     <div className={styles.searchContainer}>
       <p
@@ -34,7 +41,7 @@ const AdvancedSearch = props => {
       >
         Club Search
       </p>
-      <div id={styles.inputContainer}>
+      <form id={styles.inputContainer}>
         <div id={styles.extraSizeDiv} className={styles.sizeDiv}>
           <input
             onChange={handleCity}
@@ -56,14 +63,20 @@ const AdvancedSearch = props => {
             placeholder="Club State"
             className={styles.searchInput}
           />
-          <button
-            onClick={props.advancedSearchFunction(city, state, zip)}
-            id={styles.searchButton}
-          >
-            Search
-          </button>
+          <input
+            onChange={handleClubName}
+            value={clubName}
+            placeholder="Club Name"
+            className={styles.searchInput}
+          />
         </div>
-      </div>
+        <button
+          onClick={props.advancedSearchFunction(city, state, zip, clubName)}
+          id={styles.searchButton}
+        >
+          Search
+        </button>
+      </form>
     </div>
   );
 };

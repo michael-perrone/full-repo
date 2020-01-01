@@ -119,7 +119,7 @@ class InstructorNav extends React.Component {
                         borderRadius: "30px",
                         fontSize: "14px",
                         fontWeight: "bold",
-                        fontFamily: "cursive"
+                        fontFamily: "'Averia Serif Libre', cursive"
                       }}
                     >
                       {this.state.newNotifications.length}

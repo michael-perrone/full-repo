@@ -26,7 +26,7 @@
   top: 15px;
   right: 60px;
   font-size: 24px;
-  font-family: "Indie Flower", cursive;
+  font-family: "Merienda One", cursive;
 }
 
 .dropDownDiv {
@@ -41,13 +41,15 @@
 }
 
 .dropDownItem {
-  margin-right: 15px;
+  margin-right: 8px;
+  position: relative;
+  top: 10px;
   text-decoration: none;
   color: black;
 }
 
 #dropDownMenu {
-  font-family: cursive;
+  font-family: "Averia Serif Libre", cursive;
   top: 38px;
   right: -20px;
   border: 2px solid black;
@@ -79,6 +81,13 @@
     display: none;
   }
   #secondContainer {
-    right: -10%;
+    right: -20%;
+  }
+}
+
+@media (max-width: 540px) {
+  #secondContainer {
+    right: -7%;
+    font-size: 20px;
   }
 }

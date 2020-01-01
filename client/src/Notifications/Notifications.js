@@ -17,6 +17,17 @@ class Notifications extends React.Component {
       <React.Fragment>
         <div onClick={this.props.hideNotifications} id={styles.backDrop}></div>
         <div className={styles.notificationsContainer}>
+          <i
+            class="far fa-window-close"
+            onClick={this.props.hideNotifications}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              top: "4px",
+              fontSize: "28px",
+              right: "10px"
+            }}
+          ></i>
           {this.props.admin && <AdminNotifications />}
           {this.props.instructor && (
             <InstructorNotifications
