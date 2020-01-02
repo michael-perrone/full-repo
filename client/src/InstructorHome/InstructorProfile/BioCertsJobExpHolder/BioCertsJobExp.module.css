@@ -15,9 +15,9 @@
 }
 
 .pTagHeader {
-  background-color: black;
+  background-color: rgb(144, 248, 144);
   width: 100%;
-  color: rgb(200, 255, 200);
+  color: rgb(63, 63, 63);
   text-align: center;
   height: 38px;
   font-size: 28px;

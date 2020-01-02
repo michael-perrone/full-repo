@@ -117,7 +117,7 @@ class InstructorNav extends React.Component {
                         boxShadow: "0px 0px 8px red",
                         color: "red",
                         borderRadius: "30px",
-                        fontSize: "14px",
+                        fontSize: "20px",
                         fontWeight: "bold",
                         fontFamily: "'Averia Serif Libre', cursive"
                       }}

@@ -56,10 +56,10 @@ const InstructorProfile = props => {
                 {props.instructorProfile.instructor.clubAccepted === true && (
                   <i
                     style={{
-                      fontSize: "18px",
-                      marginLeft: "5px",
+                      fontSize: "16px",
+                      marginLeft: "7px",
                       position: "relative",
-                      top: "-2px"
+                      top: "20px"
                     }}
                     className="fas fa-user-check"
                   ></i>
