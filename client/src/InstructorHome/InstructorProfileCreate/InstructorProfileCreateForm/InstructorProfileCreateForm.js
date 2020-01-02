@@ -3,11 +3,15 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import styles from "./InstructorProfileCreateForm.module.css";
 import { connect } from "react-redux";
+import ImageAdd from '../../../ImageAdd/ImageAdd';
 
+
+// input
 class InstructorProfileCreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      multerImage: "",
       instructorTokenItems: "",
       jobExperienceArray: [],
       certificationsArray: [],
@@ -167,10 +171,25 @@ class InstructorProfileCreateForm extends React.Component {
       });
   }
 
+  uploadImage = event => {
+    let imageFormObj = new FormData();
+    console.log(event.target);
+    console.log(event.target.files[0])
+    imageFormObj.append("imageName", "multer-image", +Date.now());
+    imageFormObj.append("imageData", event.target.files[0]);
+
+    this.setState({ multerImage: URL.createObjectURL(event.target.files[0]) });
+
+    axios.post("/uploadmulter", imageFormObj).then(response => {
+      console.log(response);
+    });
+  };
+
   render() {
     return (
       <div id={styles.formsContainer}>
         <div id={styles.formSelectors}>
+          <ImageAdd/>
           {this.state.formSelectors.map((element, index) => {
             return (
               <p
@@ -400,7 +419,7 @@ class InstructorProfileCreateForm extends React.Component {
                   Add Experience
                 </button>
               </div>
-              <input type="file" />
+              
             </div>
           )}
           {this.state.showCertification && (
@@ -1008,13 +1027,12 @@ class InstructorProfileCreateForm extends React.Component {
                 />
               </div>
               <textarea
-                style={{marginLeft: '15px', padding:"4px"}}
+                style={{ marginLeft: "15px", padding: "4px" }}
                 id={styles.text}
                 maxLength="340"
                 value={this.state.otherInfo.bio}
                 placeholder="Please enter a Bio about yourself for users to see."
                 onChange={this.otherInfoHandler}
-                
                 name="bio"
               />
             </div>
@@ -1073,8 +1091,8 @@ class InstructorProfileCreateForm extends React.Component {
                     }}
                     key={element.certifiedBy + index}
                   >
-              <p>Certification {index + 1}:</p>
-                    <p style={{marginLeft: '4px'}}>{element.certifiedBy}</p >
+                    <p>Certification {index + 1}:</p>
+                    <p style={{ marginLeft: "4px" }}>{element.certifiedBy}</p>
                   </div>
                 );
               })}

@@ -3,6 +3,7 @@ const router = express.Router();
 const Instructor = require("../../models/Instructor");
 const instructorAuth = require("../../middleware/authInstructor");
 const InstructorProfile = require("../../models/InstructorProfile");
+const multer = require("multer");
 
 router.get("/myprofile", instructorAuth, async (req, res) => {
   try {
