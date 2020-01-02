@@ -400,6 +400,7 @@ class InstructorProfileCreateForm extends React.Component {
                   Add Experience
                 </button>
               </div>
+              <input type="file" />
             </div>
           )}
           {this.state.showCertification && (

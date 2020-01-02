@@ -48,6 +48,7 @@ app.use("/api/rebooking", require("./routes/api/rebooking.js"));
 app.use("/api/rebooked", require("./routes/api/rebooked"));
 app.use("/api/iBookings", require("./routes/api/iBookings"));
 
+// app.use("/uploads", express.static("uploads"));
 app.use(express.static("./client/build"));
 app.get("*", function(request, response) {
   response.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
