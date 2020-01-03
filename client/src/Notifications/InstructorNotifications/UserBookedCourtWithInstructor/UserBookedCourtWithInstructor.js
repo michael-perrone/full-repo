@@ -1,9 +1,10 @@
 import React from "react";
+import styles from '../../Notifications.module.css';
 
 const UserBookedCourtWithInstructor = props => {
-  return (
-    <div style={{ borderBottom: "2px solid black" }}>
-      <p style={{ padding: "6px 14px", fontSize: "14px" }}>
+      return (
+  <div className={styles.notificationContainer} style={{ borderBottom: "2px solid black" }}>
+      <p style={{fontSize: "14px" }}>
         {props.notification.notificationMessage}
       </p>
     </div>

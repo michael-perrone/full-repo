@@ -2,6 +2,7 @@
   width: 450px;
   height: 600px;
   position: fixed;
+  padding: 40px 10px 10px 20px;
   left: 29%;
   top: 10px;
   z-index: 999;
@@ -16,6 +17,7 @@
   display: flex;
   justify-content: space-around;
   border-bottom: 2px solid black;
+  padding: 5px;
 }
 
 #backDrop {
@@ -30,7 +32,7 @@
 
 @media (max-width: 800px) {
   .notificationsContainer {
-    width: 90%;
-    left: 4%;
+    width: 80%;
+    left: 2%;
   }
 }

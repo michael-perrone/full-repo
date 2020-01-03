@@ -49,10 +49,6 @@ class App extends React.Component {
         .join("");
     }
 
-    console.log(clubName);
-    console.log(instructorClubName);
-
-    console.log(this.props);
     return (
       <Switch>
         <Route path="/values" exact component={Values} />

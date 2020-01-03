@@ -32,6 +32,17 @@ const Schedule = props => {
         }}
         className={styles.notificationsContainer}
       >
+       <i
+            class="far fa-window-close"
+            onClick={props.hideSchedule}
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              top: "4px",
+              fontSize: "28px",
+              right: "10px"
+            }}
+          ></i>
         <div
           style={{
             marginTop: "10px",
