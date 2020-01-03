@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import styles from "../../Notifications/Notifications.module.css";
-import { HIDE_SCHEDULE } from "../../actions/actions";
+import styles from "../../../Notifications/Notifications.module.css";
+import { HIDE_SCHEDULE } from "../../../actions/actions";
 import axios from "axios";
 
 const Schedule = props => {

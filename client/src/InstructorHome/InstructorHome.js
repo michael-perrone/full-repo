@@ -8,6 +8,7 @@ import InstructorProfile from "./InstructorProfile/InstructorProfile";
 import { GET_INSTRUCTOR_PROFILE } from "../actions/actions";
 import UserNav from "../UserNav/UserNav";
 import AdminNav from "../AdminNav/AdminNav";
+import Nav from "../Shared/Nav/Nav";
 
 class InstructorHome extends React.Component {
   constructor(props) {
@@ -74,9 +75,7 @@ class InstructorHome extends React.Component {
     return (
       <div id={styles.instructorHomeContainer}>
         {this.state.isUser && !this.props.admin && <UserNav />}
-        {this.state.profileCreated && this.props.instructor && (
-          <InstructorNav />
-        )}
+        {this.state.profileCreated && this.props.instructor && <Nav />}
         {this.props.admin && <AdminNav />}
         {this.state.instructorProfile !== undefined && (
           <InstructorProfile

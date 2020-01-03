@@ -11,19 +11,6 @@ const UserNav = props => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [userNotifications, setUserNotifications] = useState([]);
 
-  React.useEffect(() => {
-    Axios.get("/api/notifications/user", {
-      headers: { "x-auth-token": props.userToken }
-    })
-      .then(response => {
-        console.log(response.status);
-        setUserNotifications(response.data.userNotifications);
-      })
-      .catch(error => {
-        console.log("thhere was an error");
-      });
-  }, []);
-
   function showDropDownHandler() {
     setShowDropDown(oldDropDownState => !oldDropDownState);
   }

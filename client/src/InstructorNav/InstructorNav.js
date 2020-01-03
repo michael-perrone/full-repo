@@ -10,7 +10,6 @@ import {
 import axios from "axios";
 import Notifications from "../Notifications/Notifications";
 import { withRouter } from "react-router-dom";
-import Schedule from "./Schedule/Schedule";
 
 class InstructorNav extends React.Component {
   constructor(props) {
@@ -191,7 +190,6 @@ class InstructorNav extends React.Component {
             </div>
           </div>
         </div>
-        {this.props.showScheduleState && <Schedule />}
         {this.props.showNotificationsState && (
           <Notifications
             setNew={this.setNewNotifications}
