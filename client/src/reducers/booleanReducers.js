@@ -7,11 +7,13 @@ import {
   SHOW_NOTIFICATIONS,
   HIDE_NOTIFICATIONS,
   BOOK_A_COURT,
-  SHOW_SCHEDULE
+  SHOW_SCHEDULE,
+  SHOW_DROP_DOWN,
 } from "../actions/actions";
 
 const initialState = {
   instructorRegister: false,
+  showDropDown: undefined,
   adminEntered: false,
   showNotifications: false,
   hideNotifications: true,
@@ -22,6 +24,11 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case SHOW_DROP_DOWN:
+    return {
+      ...state,
+      showDropDown: !state.showDropDown
+    }
     case SHOW_SCHEDULE:
       return {
         ...state,

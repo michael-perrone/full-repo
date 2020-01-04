@@ -6,6 +6,7 @@ import { SHOW_SCHEDULE, INSTRUCTOR_LOGOUT, SHOW_NOTIFICATIONS } from "../../../.
 import Schedule from "../../Schedule/Schedule";
 import axios from 'axios';
 import Notifications from '../../../../Notifications/Notifications';
+import DropDown from "../../DropDown/DropDown";
 
 const InstructorSecondContainer = props => {
   const [instructorProfile, setInstructorProfile] = React.useState(undefined)
@@ -26,15 +27,6 @@ const InstructorSecondContainer = props => {
       this.setState({ notifications: notificationsFromUpDate });
       this.setState({ newNotifications: [] });
     };
-  }
-
-
-  function goToProfileHome() {
-    props.history.push("/wdwdwadadwdwdwd");
-  }
-
-  function showDropDownHandler() {
-    setShowDropDown(prevDropDown => !prevDropDown);
   }
   
 
@@ -88,88 +80,7 @@ const InstructorSecondContainer = props => {
             My Club
           </Link>
         )}
-      <div style={{ display: "flex" }}>
-        <p style={{ cursor: "pointer" }} onClick={goToProfileHome}>
-          {showDropDown && newNotifications && newNotifications.length > 0 && (
-            <span
-              style={{
-                position: "relative",
-                left: "-6px",
-                padding: "0 5px",
-                boxShadow: "0px 0px 8px red",
-                color: "red",
-                borderRadius: "30px",
-                fontSize: "20px",
-                fontWeight: "bold",
-                fontFamily: "'Averia Serif Libre', cursive"
-              }}
-            >
-              {newNotifications.length}
-            </span>
-          )}
-        </p>{" "}
-        <i
-          onClick={showDropDownHandler}
-          style={{
-            position: "relative",
-            left: "3px",
-            top: "5px",
-            cursor: "pointer"
-          }}
-          className="fas fa-bars"
-        />
-        {showDropDown && (
-          <div id={styles.dropDownMenu}>
-            <div className={styles.dropDownDiv}>
-              <Link
-                className={styles.dropDownItem}
-                to={`/instructor/${instructorProfile.instructor._id}/createeditprofile`}
-              >
-                Edit Profile
-              </Link>
-            </div>
-            <div
-              style={{ cursor: "pointer" }}
-              className={styles.dropDownDiv}
-              onClick={props.showNotifications}
-            >
-              <p className={styles.dropDownItem}>
-                {instructorProfile && newNotifications &&
-                  newNotifications.length > 0 && (
-                    <span
-                      style={{
-                        position: "relative",
-                        left: "-6px",
-                        padding: "0 5px",
-                        boxShadow: "0px 0px 8px red",
-                        color: "red",
-                        borderRadius: "30px",
-                        fontSize: "14px",
-                        fontWeight: "bold",
-                        top: "-1px"
-                      }}
-                    >
-                      {newNotifications.length}
-                    </span>
-                  )}
-                Notifications
-              </p>
-            </div>
-            <div
-              style={{ borderBottom: "none" }}
-              className={styles.dropDownDiv}
-            >
-              <Link
-                className={styles.dropDownItem}
-                onClick={props.instructorLogout}
-                to="/"
-              >
-                Logout
-              </Link>
-            </div>
-          </div>
-        )}
-      </div>
+      <DropDown instructorProfile={instructorProfile}/>
     </div>
     {props.showScheduleState && <Schedule instructor={props}/>}
     {props.showNotificationsState && (

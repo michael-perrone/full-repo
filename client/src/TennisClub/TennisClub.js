@@ -154,7 +154,6 @@ class TennisClub extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.instructor && <InstructorNav />}
         {this.props.user && <UserNav />}
         {this.state.profileComplete && (
           <div>

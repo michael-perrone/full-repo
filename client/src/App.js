@@ -15,6 +15,7 @@ import Notifications from "./Notifications/Notifications";
 import NeedToLoginPage from "./NeedToLoginPage/NeedToLoginPage";
 import InstructorProfile from "./InstructorHome/InstructorProfile/InstructorProfile";
 import Values from "./Values/Values";
+import Nav from './Shared/Nav/Nav';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,8 @@ class App extends React.Component {
     }
 
     return (
+      <React.Fragment>
+      {(token || instructorToken || adminToken) && <Nav/>}
       <Switch>
         <Route path="/values" exact component={Values} />
         <Route
@@ -154,6 +157,7 @@ class App extends React.Component {
           />
         )}
       </Switch>
+      </React.Fragment>
     );
   }
 }

@@ -5,16 +5,30 @@ import {connect} from 'react-redux';
 import AdminSecondContainer from "./AdminSecondContainer/AdminSecondContainer"
 import InstructorSecondContainer from "./InstructorSecondContainer/InstructorSecondContainer"
 import UserSecondContainer from "./UserSecondContainer/UserSecondContainer"
+import { SHOW_DROP_DOWN } from "../../../actions/actions";
 
 const SecondContainer = props => {
   const [showDropDown, setShowDropDown] = React.useState(false);
 
   return (
     
-    <div>
+    <div id={styles.secondContainerActually}>
        {props.admin && <AdminSecondContainer/>}
        {props.instructor && <InstructorSecondContainer/>}
        {props.user && <UserSecondContainer/>}
+        <i
+          onClick={props.showDropDown}
+          style={{
+            cursor: "pointer",
+            position: 'relative',
+            top: '20px',
+            right: '35px',
+            fontSize: '22px',
+            color: props.showDropDownState ? 'white' : 'black'
+
+          }}
+          className="fas fa-bars"
+        />
   
   </div>
   )};
@@ -23,8 +37,15 @@ const mapStateToProps = (state) => {
   return {
     admin: state.authReducer.admin,
     instructor: state.authReducer.instructor,
-    user: state.authReducer.user
+    user: state.authReducer.user,
+    showDropDownState: state.booleanReducers.showDropDown
   }
 }
 
-export default connect(mapStateToProps)(SecondContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    showDropDown: () => dispatch({type: SHOW_DROP_DOWN})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SecondContainer);
