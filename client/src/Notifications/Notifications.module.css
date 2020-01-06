@@ -10,7 +10,7 @@
   background-color: rgb(209, 247, 250);
   border: 1px solid black;
   overflow: auto;
-  font-family: "Josefin Sans", sans;
+  font-family: sans-serif;
   font-size: 20px;
 }
 

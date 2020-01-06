@@ -80,7 +80,7 @@ const ClubAddedInstructorNotification = props => {
     <div className={styles.notificationContainer}>
       <p
         style={{
-          width: "70%",
+          width: "80%",
           fontSize: "14px"
         }}
       >

@@ -12,10 +12,10 @@ const DropDown = props => {
       className={styles.dropDownContainer}
       id={props.showDropDown ? styles.dropDownContainerAnimated : ""}
     >
-      {props.user && <UserDropDown user={props.user} />}
-      {props.admin && <AdminDropDown />}
+      {props.user && <UserDropDown notiNum={props.notiNum} user={props.user} />}
+      {props.admin && <AdminDropDown notiNum={props.notiNum} />}
       {props.instructor && (
-        <InstructorDropDown instructorProfile={props.instructorProfile} />
+        <InstructorDropDown notiNum={props.notiNum} instructorProfile={props.instructorProfile} />
       )}
     </div>
   );

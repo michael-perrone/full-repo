@@ -19,6 +19,7 @@ router.post("/userBookedInstructor", async (req, res) => {
     let bookingDateArray = booking.date.split(" ");
     let bookingDate = bookingDateArray.join("-");
     let notificationCreate = new Notification({
+      notificationRead: false,
       notificationDate: new Date(),
       instructorId: req.body.instructorId,
       userId: req.body.userId,
@@ -34,6 +35,16 @@ router.post("/userBookedInstructor", async (req, res) => {
   }
 });
 
+
+router.post('/allReadUser', userAuth, async (req, res) => {
+  let user = await User.findOne({_id: req.user._id});
+  let notifications = await Notification.find({_id: user.notifications});
+  for (let t = 0; t < notifications.length; t++) {
+    notifications[t].notificationRead = true;
+    await notifications[t].save();
+  }
+})
+
 router.post("/instructorBookedUser", async (req, res) => {
   try {
     let instructor = await Instructor.findOne({ _id: req.body.instructorId });
@@ -42,7 +53,8 @@ router.post("/instructorBookedUser", async (req, res) => {
     let newNotification = new Notification({
       notificationType: "InstructorBookedUser",
       notificationMessage: `You have been added to a ${booking.bookingType} from ${booking.timeStart}-${booking.timeEnd} at ${booking.clubName} by ${instructor.fullName}.`,
-      notificationDate: new Date()
+      notificationDate: new Date(),
+      notificationRead: false
     });
 
     for (let i = 0; i < players.length; i++) {

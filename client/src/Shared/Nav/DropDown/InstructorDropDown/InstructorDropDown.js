@@ -33,7 +33,7 @@ const InstructorDropDown = (props) => {
           <DropDownLink clickProp={editProfile}>
             Edit Profile
           </DropDownLink>
-          <DropDownLink clickProp={props.showNotifications}>
+          <DropDownLink notiNum={props.notiNum} clickProp={props.showNotifications}>
             Notifications
           </DropDownLink>
           <DropDownLink clickProp={instructorLogout}>

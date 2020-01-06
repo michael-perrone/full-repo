@@ -8,13 +8,15 @@ import UserSecondContainer from "./UserSecondContainer/UserSecondContainer";
 import { SHOW_DROP_DOWN } from "../../../actions/actions";
 
 const SecondContainer = props => {
+  console.log(props.user)
   return (
     <div id={styles.secondContainerActually}>
       {props.admin && <AdminSecondContainer />}
       {props.instructor && <InstructorSecondContainer />}
       {props.user && <UserSecondContainer />}
       <i
-        id={styles.bars}
+      style={{right: props.user ? '-30px' : ""}}
+        id={props.instructor ? styles.instructorBars : styles.bars}
         onClick={props.showDropDown}
         style={{
           color: props.showDropDownState ? "white" : "black"
