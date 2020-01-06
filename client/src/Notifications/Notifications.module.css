@@ -1,6 +1,6 @@
 .notificationsContainer {
   width: 450px;
-  height: 600px;
+  height: 500px;
   position: fixed;
   padding: 40px 10px 10px 20px;
   left: 29%;
@@ -10,10 +10,11 @@
   background-color: rgb(209, 247, 250);
   border: 1px solid black;
   overflow: auto;
+  font-family: "Josefin Sans", sans;
+  font-size: 20px;
 }
 
 .notificationContainer {
-  height: 90px;
   display: flex;
   justify-content: space-around;
   border-bottom: 2px solid black;

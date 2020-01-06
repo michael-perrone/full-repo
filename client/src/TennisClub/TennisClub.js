@@ -6,8 +6,6 @@ import Calendar from "./Calendar/Calendar";
 import decoder from "jwt-decode";
 import AdminBooking from "./BookingHelpers/AdminBooking/AdminBooking";
 import { connect } from "react-redux";
-import InstructorNav from "../InstructorNav/InstructorNav";
-import UserNav from "../UserNav/UserNav";
 import { Link } from "react-router-dom";
 
 class TennisClub extends React.Component {
@@ -154,7 +152,6 @@ class TennisClub extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.user && <UserNav />}
         {this.state.profileComplete && (
           <div>
             <div style={{ width: "100%" }} id={styles.mainContainer}>
@@ -646,9 +643,12 @@ class TennisClub extends React.Component {
               </div>
             </div>
             <div>
-              <div style={{overflow: 'auto'}} id={styles.courtsShowingHeader}>
-                <AdminBooking date={this.state.dateChosenForCourts}
-                  onDateClick={this.onDateClick} instructors={this.state.instructors} />
+              <div style={{ overflow: "auto" }} id={styles.courtsShowingHeader}>
+                <AdminBooking
+                  date={this.state.dateChosenForCourts}
+                  onDateClick={this.onDateClick}
+                  instructors={this.state.instructors}
+                />
               </div>
               <CourtContainer
                 clubNameAllLower={this.state.club.clubNameAllLower}
@@ -664,7 +664,8 @@ class TennisClub extends React.Component {
             </div>
           </div>
         )}{" "}
-        {this.state.profileComplete === false && this.props.user && 
+        {this.state.profileComplete === false &&
+          this.props.user &&
           this.props.user.user.isUser && (
             <p style={{ marginTop: "80px" }}>
               This club has not finished setting up on tennis-mate yet. Check

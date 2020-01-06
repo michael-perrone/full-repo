@@ -3,7 +3,7 @@ import axios from "axios";
 import TennisClubInList from "./TennisClubInList/TennisClubInList";
 import styles from "./TennisClubsList.module.css";
 import { withRouter } from "react-router-dom";
-import UserNav from "../UserNav/UserNav";
+
 import LocationModal from "./LocationModal/LocationModal";
 import { connect } from "react-redux";
 import AdvancedSearch from "./AdvancedSearch/AdvancedSearch";
@@ -59,7 +59,7 @@ class TennisClubsList extends React.Component {
   }
 
   advancedSearchFunction(city, state, zip, clubName) {
-    return (event) => {
+    return event => {
       event.preventDefault();
       const objectToSend = {
         city,
@@ -274,7 +274,7 @@ class TennisClubsList extends React.Component {
             locationDenied={this.locationDenied}
           />
         )}
-        <UserNav />
+
         <AdvancedSearch advancedSearchFunction={this.advancedSearchFunction} />
         <div
           style={{

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import UserNav from "../UserNav/UserNav";
 import UserHomeContainer from "./UserHomeContainer/UserHomeContainer";
 
 const UserHome = props => {
@@ -41,7 +40,6 @@ const UserHome = props => {
           }}
         ></div>
       )}
-      <UserNav />
       <UserHomeContainer
         searching={searching}
         searchingHandler={searchingHandler}

@@ -29,12 +29,10 @@
   display: flex;
   position: relative;
   top: 15px;
-  right: 60px;
+
   font-size: 24px;
   font-family: "Merienda One", cursive;
 }
-
-
 
 .dropDownItem {
   margin-right: 8px;
@@ -44,7 +42,6 @@
   color: black;
 }
 
-
 @media (max-width: 775px) {
   #title {
     display: none;
@@ -53,9 +50,10 @@
     width: 100%;
     right: 0;
     left: 20px;
-    
   }
-  #secondContainerActually {width: 100%;}
+  #secondContainerActually {
+    width: 100%;
+  }
 }
 
 @media (max-width: 540px) {
@@ -64,5 +62,3 @@
     top: 18px;
   }
 }
-
-

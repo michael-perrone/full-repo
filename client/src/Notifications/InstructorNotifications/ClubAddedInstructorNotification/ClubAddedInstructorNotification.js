@@ -80,7 +80,7 @@ const ClubAddedInstructorNotification = props => {
     <div className={styles.notificationContainer}>
       <p
         style={{
-          width: "215px",
+          width: "70%",
           fontSize: "14px"
         }}
       >
@@ -89,7 +89,7 @@ const ClubAddedInstructorNotification = props => {
       {!props.notification.answer && !clubAccepted && (
         <div
           style={{
-            width: "100px",
+            width: "120px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center"
@@ -104,9 +104,11 @@ const ClubAddedInstructorNotification = props => {
           style={{
             display: "flex",
             position: "relative",
-            top: "30px",
+            top: "20px",
             right: "5px",
-            padding: "0px 2px"
+            padding: "0px 2px",
+            height: "20px",
+            fontSize: "18px"
           }}
         >
           <i className="far fa-check-square"></i>
@@ -115,7 +117,6 @@ const ClubAddedInstructorNotification = props => {
               marginLeft: "4px",
               fontFamily: "sans",
               fontWeight: "bold",
-              height: "20px",
               color: "black"
             }}
           >
